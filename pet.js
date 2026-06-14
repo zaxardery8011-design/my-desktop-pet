@@ -21,6 +21,7 @@
     STRETCH: 'stretch',
     SCRATCH: 'scratch',
     PEEK: 'peek',
+    COOL: 'cool',
     FALL: 'fall',
     DRAG: 'drag'
   });
@@ -28,19 +29,51 @@
   const groundGap = 6;
   const walkFrameMs = 150;
   const runFrameMs = 70;
+  const coolFrameMs = 110;
+  const coolRandomChance = 0.035;
+  const coolRandomCooldownMs = 75000;
   const sleepAfterMs = 45000;
   const gravityPx = 2100;
   const minPetHeight = 120;
   const maxPetHeight = 160;
-  const frameSources = {
+  const baseFrameSources = {
     idle: 'assets/frames/idle.png',
     walk1: 'assets/frames/walk1.png',
     walk2: 'assets/frames/walk2.png',
     walk3: 'assets/frames/walk3.png',
     sit: 'assets/frames/sit.png'
   };
+  const coolFrameSources = {
+    cool_00: 'assets/cool/cool_00.png',
+    cool_01: 'assets/cool/cool_01.png',
+    cool_02: 'assets/cool/cool_02.png',
+    cool_03: 'assets/cool/cool_03.png',
+    cool_04: 'assets/cool/cool_04.png',
+    cool_05: 'assets/cool/cool_05.png',
+    cool_06: 'assets/cool/cool_06.png',
+    cool_07: 'assets/cool/cool_07.png',
+    cool_08: 'assets/cool/cool_08.png',
+    cool_09: 'assets/cool/cool_09.png',
+    cool_10: 'assets/cool/cool_10.png',
+    cool_11: 'assets/cool/cool_11.png'
+  };
+  const frameSources = { ...baseFrameSources, ...coolFrameSources };
   const walkFrameKeys = ['walk1', 'walk2', 'walk3'];
-  const frameKeys = ['idle', 'walk1', 'walk2', 'walk3', 'sit'];
+  const coolFrameKeys = [
+    'cool_00',
+    'cool_01',
+    'cool_02',
+    'cool_03',
+    'cool_04',
+    'cool_05',
+    'cool_06',
+    'cool_07',
+    'cool_08',
+    'cool_09',
+    'cool_10',
+    'cool_11'
+  ];
+  const frameKeys = ['idle', 'walk1', 'walk2', 'walk3', 'sit', ...coolFrameKeys];
   const frames = {};
 
   const stateDurations = {
@@ -86,6 +119,11 @@
     '先坐一下',
     '啾咪'
   ];
+  const coolSpeechPool = [
+    '😎',
+    '太陽好大',
+    '酷吧'
+  ];
 
   const pet = {
     x: 80,
@@ -103,6 +141,7 @@
     action: null,
     fall: null,
     lastInteractionAt: 0,
+    lastCoolAt: -Infinity,
     nextCursorLookAt: 0
   };
 
@@ -166,6 +205,7 @@
       STATES.WALK,
       STATES.RUN,
       STATES.PEEK,
+      STATES.COOL,
       STATES.FALL,
       STATES.DRAG
     ].includes(pet.state);
@@ -218,6 +258,7 @@
     petEl.classList.toggle('stretching', pet.state === STATES.STRETCH);
     petEl.classList.toggle('scratching', pet.state === STATES.SCRATCH);
     petEl.classList.toggle('peeking', pet.state === STATES.PEEK);
+    petEl.classList.toggle('cooling', pet.state === STATES.COOL);
     petEl.classList.toggle('falling', pet.state === STATES.FALL);
     petEl.classList.toggle('dragging', Boolean(dragging));
     petEl.classList.toggle('landing', Boolean(pet.fall && pet.fall.landedAt));
@@ -271,7 +312,26 @@
     );
   }
 
+  function syncCoolFrame(now) {
+    if (!pet.action || !Array.isArray(pet.action.frames)) {
+      setFrame('cool_00');
+      return;
+    }
+
+    while (now >= pet.action.nextFrameAt && pet.action.frameIndex < pet.action.frames.length - 1) {
+      pet.action.frameIndex += 1;
+      pet.action.nextFrameAt += coolFrameMs;
+    }
+
+    setFrame(pet.action.frames[pet.action.frameIndex]);
+  }
+
   function syncFrame(now) {
+    if (pet.state === STATES.COOL) {
+      syncCoolFrame(now);
+      return;
+    }
+
     if (isWalkFrameState()) {
       const frameMs = pet.state === STATES.RUN ? runFrameMs : walkFrameMs;
       if (!walkFrameKeys.includes(currentFrameKey) || now >= nextWalkFrameAt) {
@@ -433,6 +493,39 @@
     nextWalkFrameAt = now;
   }
 
+  function buildCoolSequence(loopCount) {
+    const pingPong = coolFrameKeys.concat(coolFrameKeys.slice(0, -1).reverse());
+    const sequence = [];
+
+    for (let index = 0; index < loopCount; index += 1) {
+      sequence.push(...pingPong);
+    }
+
+    return sequence;
+  }
+
+  function startCool(now, _forcedDuration, options = {}) {
+    const loops = options.loops || (Math.random() < 0.28 ? 2 : 1);
+    const coolFrames = buildCoolSequence(loops);
+
+    pet.state = STATES.COOL;
+    pet.idleFrame = 'idle';
+    pet.action = {
+      frames: coolFrames,
+      frameIndex: 0,
+      nextFrameAt: now + coolFrameMs
+    };
+    pet.fall = null;
+    pet.stateUntil = now + coolFrames.length * coolFrameMs + 80;
+    pet.lastCoolAt = now;
+    petEl.classList.remove('reacting');
+    setFrame(coolFrames[0]);
+
+    if (options.speak) {
+      showSpeech(pickRandom(coolSpeechPool));
+    }
+  }
+
   function startFall(now, initialVelocity) {
     pet.state = STATES.FALL;
     pet.idleFrame = 'idle';
@@ -446,7 +539,7 @@
     hideSleepZzz();
   }
 
-  function startState(state, now, forcedDuration) {
+  function startState(state, now, forcedDuration, options = {}) {
     hideSleepZzz();
 
     if (state === STATES.WALK) {
@@ -465,6 +558,8 @@
       startScratch(now, forcedDuration);
     } else if (state === STATES.PEEK) {
       startPeek(now, forcedDuration);
+    } else if (state === STATES.COOL) {
+      startCool(now, forcedDuration, options);
     }
   }
 
@@ -476,6 +571,20 @@
 
   function startNextState(now) {
     startState(chooseNextState(now), now);
+  }
+
+  function maybeStartRandomCool(now) {
+    if (
+      now - pet.lastCoolAt >= coolRandomCooldownMs &&
+      Math.random() < coolRandomChance
+    ) {
+      startState(STATES.COOL, now, null, {
+        speak: Math.random() < 0.55
+      });
+      return true;
+    }
+
+    return false;
   }
 
   function showSpeech(text) {
@@ -532,6 +641,9 @@
     }
 
     if (now >= pet.stateUntil) {
+      if (maybeStartRandomCool(now)) {
+        return;
+      }
       startNextState(now);
     }
   }
@@ -589,6 +701,12 @@
     }
   }
 
+  function updateCool(now) {
+    if (!pet.action || now >= pet.stateUntil) {
+      startState(STATES.IDLE_LOOK, now, rand(900, 1700));
+    }
+  }
+
   function maybeLookAtCursor(event, now) {
     const centerX = pet.x + pet.width * 0.5;
     const centerY = pet.y + pet.height * 0.52;
@@ -635,6 +753,8 @@
         }
       } else if (pet.state === STATES.PEEK) {
         updatePeek(now, dt);
+      } else if (pet.state === STATES.COOL) {
+        updateCool(now);
       } else if (pet.state === STATES.FALL) {
         updateFall(now, dt);
       }
@@ -727,6 +847,22 @@
     event.preventDefault();
   }
 
+  function onDoubleClick(event) {
+    if (event.button !== 0 || !hitTest(event.clientX, event.clientY)) {
+      return;
+    }
+
+    const now = performance.now();
+    markInteraction(now);
+    startState(STATES.COOL, now, null, {
+      loops: 2,
+      speak: true
+    });
+    setPassthrough(false);
+    applyPet();
+    event.preventDefault();
+  }
+
   function onContextMenu(event) {
     if (!hitTest(event.clientX, event.clientY)) {
       return;
@@ -773,6 +909,7 @@
         return {
           state: pet.state,
           frame: currentFrameKey,
+          coolFrameIndex: pet.state === STATES.COOL && pet.action ? pet.action.frameIndex : null,
           x: Math.round(pet.x),
           y: Math.round(pet.y),
           dir: pet.dir,
@@ -780,6 +917,39 @@
           bubble: bubble.textContent,
           zzzVisible: Boolean(sleepZzz && sleepZzz.classList.contains('show')),
           ignoredMouse: ignoreMouse
+        };
+      },
+      alphaProbe() {
+        const rect = petImage.getBoundingClientRect();
+        let opaquePoint = null;
+
+        for (let y = 0; y < alphaCanvas.height && !opaquePoint; y += 4) {
+          for (let x = 0; x < alphaCanvas.width; x += 4) {
+            if (alphaCtx.getImageData(x, y, 1, 1).data[3] > 30) {
+              opaquePoint = { x, y };
+              break;
+            }
+          }
+        }
+
+        if (!opaquePoint) {
+          return {
+            frame: currentFrameKey,
+            opaque: false,
+            transparentTopLeft: hitTest(rect.left + 1, rect.top + 1)
+          };
+        }
+
+        const sourceU = (opaquePoint.x + 0.5) / alphaCanvas.width;
+        const renderedU = pet.visualDir < 0 ? 1 - sourceU : sourceU;
+        const clientX = rect.left + renderedU * rect.width;
+        const clientY = rect.top + ((opaquePoint.y + 0.5) / alphaCanvas.height) * rect.height;
+
+        return {
+          frame: currentFrameKey,
+          opaque: hitTest(clientX, clientY),
+          transparentTopLeft: hitTest(rect.left + 1, rect.top + 1),
+          opaquePoint
         };
       },
       forceState(state) {
@@ -807,6 +977,7 @@
     window.addEventListener('mousemove', onMouseMove, true);
     window.addEventListener('mousedown', onMouseDown, true);
     window.addEventListener('mouseup', onMouseUp, true);
+    window.addEventListener('dblclick', onDoubleClick, true);
     window.addEventListener('contextmenu', onContextMenu, true);
     window.addEventListener('mouseleave', () => {
       if (!dragging) {
