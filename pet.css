@@ -5,6 +5,10 @@
   --pet-width: 300px;
   --pet-height: 148px;
   --frame-height: 148px;
+  --bubble-x: 0px;
+  --bubble-y: 0px;
+  --zzz-x: 0px;
+  --zzz-y: 0px;
 }
 
 html,
@@ -65,44 +69,151 @@ body {
 }
 
 #pet.walking #petSprite {
-  animation: none;
+  animation: walkBob 0.42s ease-in-out infinite;
 }
 
-#pet.idle #petSprite {
-  animation: breathe 2.2s ease-in-out infinite;
+#pet.running #petSprite {
+  animation: runBob 0.18s ease-in-out infinite;
+}
+
+#pet.idle-look #petSprite {
+  animation: lookAround 2.4s ease-in-out infinite;
+}
+
+#pet.idle-look #petImage {
+  animation: blink 4.8s ease-in-out infinite;
+}
+
+#pet.resting #petSprite {
+  animation: restBreathe 3.2s ease-in-out infinite;
+}
+
+#pet.sleeping #petSprite {
+  animation: sleepBreathe 4.4s ease-in-out infinite;
+}
+
+#pet.stretching #petSprite {
+  animation: stretchBody 0.95s cubic-bezier(0.2, 0.86, 0.24, 1) both;
+}
+
+#pet.scratching #petSprite {
+  animation: scratchShake 0.12s steps(2, end) infinite;
+}
+
+#pet.peeking #petSprite {
+  animation: peekBob 1.1s ease-in-out infinite;
 }
 
 #pet.dragging #petSprite {
-  animation: none;
-  transform: translateX(-50%) scaleX(var(--pet-flip)) scale(1.025);
+  animation: dragStruggle 0.16s steps(2, end) infinite;
+}
+
+#pet.falling:not(.landing) #petSprite {
+  animation: fallTuck 0.34s ease-in-out infinite alternate;
+}
+
+#pet.landing #petSprite {
+  animation: landSquash 0.42s cubic-bezier(0.18, 0.9, 0.22, 1.1) both;
 }
 
 #pet.reacting #petSprite {
   animation: hop 0.72s cubic-bezier(0.18, 0.85, 0.2, 1.2);
 }
 
-#bubble {
+#bubble,
+.sleep-zzz {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 6px 9px;
+  pointer-events: none;
+  will-change: transform, opacity;
+  white-space: nowrap;
+}
+
+#bubble {
+  max-width: min(240px, calc(100vw - 16px));
+  padding: 7px 11px;
+  border: 1px solid rgba(89, 70, 48, 0.16);
   border-radius: 999px;
   color: #24201b;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+  font-size: 17px;
+  line-height: 1.25;
+  opacity: 0;
+  transform: translate3d(-999px, -999px, 0) scale(0.82);
+}
+
+#bubble.show {
+  animation: bubble 2.55s ease-out both;
+}
+
+.sleep-zzz {
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: #3a3329;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.16);
   font-size: 18px;
   line-height: 1;
   opacity: 0;
   transform: translate3d(-999px, -999px, 0) scale(0.82);
-  pointer-events: none;
-  will-change: transform, opacity;
 }
 
-#bubble.show {
-  animation: bubble 1.05s ease-out both;
+.sleep-zzz.show {
+  animation: zzzFloat 2.8s ease-in-out infinite;
 }
 
-@keyframes breathe {
+@keyframes walkBob {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateY(-2px);
+  }
+}
+
+@keyframes runBob {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateY(-5px) rotate(2deg);
+  }
+}
+
+@keyframes lookAround {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(-49%) scaleX(var(--pet-flip)) translateY(-1px) rotate(-2deg);
+  }
+
+  58% {
+    transform: translateX(-51%) scaleX(var(--pet-flip)) translateY(0) rotate(2deg);
+  }
+}
+
+@keyframes blink {
+  0%,
+  90%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  93% {
+    transform: scaleY(0.92);
+  }
+}
+
+@keyframes restBreathe {
   0%,
   100% {
     transform: translateX(-50%) scaleX(var(--pet-flip)) scale(1);
@@ -110,6 +221,94 @@ body {
 
   50% {
     transform: translateX(-50%) scaleX(var(--pet-flip)) scale(1.012, 0.992);
+  }
+}
+
+@keyframes sleepBreathe {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) scale(0.99, 1.01);
+  }
+
+  50% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) scale(1.025, 0.982);
+  }
+}
+
+@keyframes stretchBody {
+  0% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) scale(1);
+  }
+
+  32% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) scale(0.94, 1.13) translateY(-4px);
+  }
+
+  66% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) scale(1.08, 0.9) translateY(4px);
+  }
+
+  100% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) scale(1);
+  }
+}
+
+@keyframes scratchShake {
+  0% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateX(-3px) rotate(-3deg);
+  }
+
+  100% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateX(3px) rotate(3deg);
+  }
+}
+
+@keyframes peekBob {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateY(-3px);
+  }
+}
+
+@keyframes dragStruggle {
+  0% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateX(-4px) rotate(-5deg) scale(1.025);
+  }
+
+  100% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) translateX(4px) rotate(5deg) scale(1.025);
+  }
+}
+
+@keyframes fallTuck {
+  0% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) rotate(-6deg) scale(0.98, 1.03);
+  }
+
+  100% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) rotate(6deg) scale(1.02, 0.98);
+  }
+}
+
+@keyframes landSquash {
+  0% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) scale(1);
+  }
+
+  35% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) scale(1.16, 0.78);
+  }
+
+  68% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) scale(0.95, 1.08);
+  }
+
+  100% {
+    transform: translateX(-50%) scaleX(var(--pet-flip)) scale(1);
   }
 }
 
@@ -137,13 +336,30 @@ body {
     transform: translate3d(var(--bubble-x), var(--bubble-y), 0) scale(0.75);
   }
 
-  18%,
-  72% {
+  14%,
+  76% {
     opacity: 1;
   }
 
   100% {
     opacity: 0;
-    transform: translate3d(var(--bubble-x), calc(var(--bubble-y) - 28px), 0) scale(1);
+    transform: translate3d(var(--bubble-x), calc(var(--bubble-y) - 32px), 0) scale(1);
+  }
+}
+
+@keyframes zzzFloat {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--zzz-x), var(--zzz-y), 0) scale(0.78);
+  }
+
+  22%,
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--zzz-x), calc(var(--zzz-y) - 34px), 0) scale(1.08);
   }
 }
