@@ -29,7 +29,7 @@
   const groundGap = 6;
   const walkFrameMs = 150;
   const runFrameMs = 70;
-  const coolFrameMs = 110;
+  const coolFrameMs = 90;
   const coolRandomChance = 0.035;
   const coolRandomCooldownMs = 75000;
   const sleepAfterMs = 45000;
@@ -55,7 +55,19 @@
     cool_08: 'assets/cool/cool_08.png',
     cool_09: 'assets/cool/cool_09.png',
     cool_10: 'assets/cool/cool_10.png',
-    cool_11: 'assets/cool/cool_11.png'
+    cool_11: 'assets/cool/cool_11.png',
+    cool_12: 'assets/cool/cool_12.png',
+    cool_13: 'assets/cool/cool_13.png',
+    cool_14: 'assets/cool/cool_14.png',
+    cool_15: 'assets/cool/cool_15.png',
+    cool_16: 'assets/cool/cool_16.png',
+    cool_17: 'assets/cool/cool_17.png',
+    cool_18: 'assets/cool/cool_18.png',
+    cool_19: 'assets/cool/cool_19.png',
+    cool_20: 'assets/cool/cool_20.png',
+    cool_21: 'assets/cool/cool_21.png',
+    cool_22: 'assets/cool/cool_22.png',
+    cool_23: 'assets/cool/cool_23.png'
   };
   const frameSources = { ...baseFrameSources, ...coolFrameSources };
   const walkFrameKeys = ['walk1', 'walk2', 'walk3'];
@@ -71,7 +83,19 @@
     'cool_08',
     'cool_09',
     'cool_10',
-    'cool_11'
+    'cool_11',
+    'cool_12',
+    'cool_13',
+    'cool_14',
+    'cool_15',
+    'cool_16',
+    'cool_17',
+    'cool_18',
+    'cool_19',
+    'cool_20',
+    'cool_21',
+    'cool_22',
+    'cool_23'
   ];
   const frameKeys = ['idle', 'walk1', 'walk2', 'walk3', 'sit', ...coolFrameKeys];
   const frames = {};
