@@ -1,26 +1,46 @@
 (function () {
   'use strict';
 
-  const api = window.mrwuPet;
+  const api = window.mrwuPet || {
+    setIgnoreMouseEvents() {},
+    showContextMenu() {}
+  };
   const petEl = document.getElementById('pet');
   const petImage = document.getElementById('petImage');
   const bubble = document.getElementById('bubble');
   const alphaCanvas = document.createElement('canvas');
   const alphaCtx = alphaCanvas.getContext('2d', { willReadFrequently: true });
   const groundGap = 6;
+  const walkFrameMs = 150;
+  const minPetHeight = 120;
+  const maxPetHeight = 160;
+  const frameSources = {
+    idle: 'assets/frames/idle.png',
+    walk1: 'assets/frames/walk1.png',
+    walk2: 'assets/frames/walk2.png',
+    walk3: 'assets/frames/walk3.png',
+    sit: 'assets/frames/sit.png'
+  };
+  const walkFrameKeys = ['walk1', 'walk2', 'walk3'];
+  const frameKeys = ['idle', 'walk1', 'walk2', 'walk3', 'sit'];
+  const frames = {};
 
   const pet = {
     x: 80,
     y: 0,
-    width: 180,
-    height: 264,
+    width: 300,
+    height: 148,
     dir: 1,
     speed: 70,
     mode: 'walk',
     modeUntil: 0,
+    idleFrame: 'idle',
     settle: null
   };
 
+  let currentFrameKey = '';
+  let walkFrameIndex = 0;
+  let nextWalkFrameAt = 0;
   let lastFrame = 0;
   let ignoreMouse = true;
   let dragging = null;
@@ -59,23 +79,34 @@
     api.setIgnoreMouseEvents(ignore);
   }
 
+  function shouldFlipCurrentFrame() {
+    return pet.mode === 'walk' && pet.dir < 0;
+  }
+
   function applyPet() {
     pet.x = clamp(pet.x, 0, maxX());
     pet.y = clamp(pet.y, 0, maxY());
     petEl.style.setProperty('--pet-x', `${Math.round(pet.x)}px`);
     petEl.style.setProperty('--pet-y', `${Math.round(pet.y)}px`);
-    petEl.style.setProperty('--pet-flip', pet.dir < 0 ? '-1' : '1');
+    petEl.style.setProperty('--pet-flip', shouldFlipCurrentFrame() ? '-1' : '1');
     petEl.classList.toggle('walking', pet.mode === 'walk');
-    petEl.classList.toggle('idle', pet.mode === 'idle' || pet.mode === 'settle');
+    petEl.classList.toggle('idle', pet.mode === 'idle' || pet.mode === 'settle' || pet.mode === 'drag');
     petEl.classList.toggle('dragging', Boolean(dragging));
   }
 
+  function frameAspect(frame) {
+    return frame.naturalWidth / frame.naturalHeight;
+  }
+
   function measurePet() {
-    const viewportWidth = window.innerWidth || 1280;
-    const width = clamp(Math.round(viewportWidth * 0.105), 142, 210);
-    pet.width = width;
-    pet.height = Math.round(width * (petImage.naturalHeight / petImage.naturalWidth));
-    petEl.style.setProperty('--pet-width', `${width}px`);
+    const viewportHeight = window.innerHeight || 720;
+    const height = clamp(Math.round(viewportHeight * 0.16), minPetHeight, maxPetHeight);
+    const maxAspect = frameKeys.reduce((max, key) => Math.max(max, frameAspect(frames[key])), 1);
+    pet.width = Math.ceil(height * maxAspect);
+    pet.height = height;
+    petEl.style.setProperty('--pet-width', `${pet.width}px`);
+    petEl.style.setProperty('--pet-height', `${pet.height}px`);
+    petEl.style.setProperty('--frame-height', `${height}px`);
     pet.x = clamp(pet.x, 0, maxX());
     if (!dragging && pet.mode !== 'settle') {
       pet.y = groundY();
@@ -83,15 +114,40 @@
     applyPet();
   }
 
-  function buildAlphaMap() {
-    alphaCanvas.width = petImage.naturalWidth;
-    alphaCanvas.height = petImage.naturalHeight;
+  function buildAlphaMap(frame) {
+    alphaCanvas.width = frame.naturalWidth;
+    alphaCanvas.height = frame.naturalHeight;
     alphaCtx.clearRect(0, 0, alphaCanvas.width, alphaCanvas.height);
-    alphaCtx.drawImage(petImage, 0, 0);
+    alphaCtx.drawImage(frame.image, 0, 0);
+  }
+
+  function setFrame(frameKey) {
+    const frame = frames[frameKey];
+    if (!frame || currentFrameKey === frameKey) {
+      return;
+    }
+
+    currentFrameKey = frameKey;
+    petImage.src = frame.src;
+    petEl.dataset.frame = frameKey;
+    buildAlphaMap(frame);
+  }
+
+  function syncFrame(now) {
+    if (pet.mode === 'walk') {
+      if (!walkFrameKeys.includes(currentFrameKey) || now >= nextWalkFrameAt) {
+        setFrame(walkFrameKeys[walkFrameIndex]);
+        walkFrameIndex = (walkFrameIndex + 1) % walkFrameKeys.length;
+        nextWalkFrameAt = now + walkFrameMs;
+      }
+      return;
+    }
+
+    setFrame(pet.mode === 'idle' && pet.idleFrame === 'sit' ? 'sit' : 'idle');
   }
 
   function hitTest(clientX, clientY) {
-    const rect = petEl.getBoundingClientRect();
+    const rect = petImage.getBoundingClientRect();
     if (
       clientX < rect.left ||
       clientX > rect.right ||
@@ -105,7 +161,7 @@
     }
 
     let u = (clientX - rect.left) / rect.width;
-    if (pet.dir < 0) {
+    if (walkFrameKeys.includes(currentFrameKey) && pet.dir < 0) {
       u = 1 - u;
     }
     const v = (clientY - rect.top) / rect.height;
@@ -126,20 +182,27 @@
 
   function startWalk(now) {
     pet.mode = 'walk';
+    pet.idleFrame = 'idle';
     pet.settle = null;
     pet.dir = chooseDirection();
     pet.speed = rand(45, 92);
     pet.modeUntil = now + rand(2600, 6800);
+    walkFrameIndex = 0;
+    nextWalkFrameAt = now;
   }
 
   function startIdle(now) {
+    const duration = rand(750, 2300);
     pet.mode = 'idle';
+    pet.idleFrame = duration > 1450 && Math.random() < 0.28 ? 'sit' : 'idle';
     pet.settle = null;
-    pet.modeUntil = now + rand(750, 2300);
+    pet.modeUntil = now + (pet.idleFrame === 'sit' ? Math.max(duration, rand(1500, 2600)) : duration);
   }
 
   function settleToGround(now) {
     pet.mode = 'settle';
+    pet.idleFrame = 'idle';
+    setFrame('idle');
     pet.settle = {
       start: now,
       duration: rand(320, 540),
@@ -197,6 +260,7 @@
       }
     }
 
+    syncFrame(now);
     applyPet();
     window.requestAnimationFrame(update);
   }
@@ -232,6 +296,7 @@
       moved: false
     };
     pet.mode = 'drag';
+    setFrame('idle');
     setPassthrough(false);
     applyPet();
     event.preventDefault();
@@ -263,9 +328,38 @@
     api.showContextMenu({ x: event.clientX, y: event.clientY });
   }
 
+  function loadFrame(key) {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      const src = frameSources[key];
+
+      image.onload = () => {
+        resolve({
+          key,
+          src,
+          image,
+          naturalWidth: image.naturalWidth,
+          naturalHeight: image.naturalHeight
+        });
+      };
+      image.onerror = () => {
+        reject(new Error(`Failed to load pet frame: ${src}`));
+      };
+      image.decoding = 'async';
+      image.src = src;
+    });
+  }
+
+  async function loadFrames() {
+    const loadedFrames = await Promise.all(frameKeys.map(loadFrame));
+    for (const frame of loadedFrames) {
+      frames[frame.key] = frame;
+    }
+  }
+
   async function boot() {
-    await petImage.decode();
-    buildAlphaMap();
+    await loadFrames();
+    setFrame('idle');
     measurePet();
     pet.x = rand(20, Math.max(21, maxX() - 20));
     pet.y = groundY();
