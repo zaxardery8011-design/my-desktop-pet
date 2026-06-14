@@ -29,7 +29,7 @@
   const groundGap = 6;
   const walkFrameMs = 150;
   const runFrameMs = 70;
-  const coolFrameMs = 90;
+  const coolFrameMs = 42;
   const coolRandomChance = 0.035;
   const coolRandomCooldownMs = 75000;
   const sleepAfterMs = 45000;
@@ -43,60 +43,18 @@
     walk3: 'assets/frames/walk3.png',
     sit: 'assets/frames/sit.png'
   };
-  const coolFrameSources = {
-    cool_00: 'assets/cool/cool_00.png',
-    cool_01: 'assets/cool/cool_01.png',
-    cool_02: 'assets/cool/cool_02.png',
-    cool_03: 'assets/cool/cool_03.png',
-    cool_04: 'assets/cool/cool_04.png',
-    cool_05: 'assets/cool/cool_05.png',
-    cool_06: 'assets/cool/cool_06.png',
-    cool_07: 'assets/cool/cool_07.png',
-    cool_08: 'assets/cool/cool_08.png',
-    cool_09: 'assets/cool/cool_09.png',
-    cool_10: 'assets/cool/cool_10.png',
-    cool_11: 'assets/cool/cool_11.png',
-    cool_12: 'assets/cool/cool_12.png',
-    cool_13: 'assets/cool/cool_13.png',
-    cool_14: 'assets/cool/cool_14.png',
-    cool_15: 'assets/cool/cool_15.png',
-    cool_16: 'assets/cool/cool_16.png',
-    cool_17: 'assets/cool/cool_17.png',
-    cool_18: 'assets/cool/cool_18.png',
-    cool_19: 'assets/cool/cool_19.png',
-    cool_20: 'assets/cool/cool_20.png',
-    cool_21: 'assets/cool/cool_21.png',
-    cool_22: 'assets/cool/cool_22.png',
-    cool_23: 'assets/cool/cool_23.png'
-  };
-  const frameSources = { ...baseFrameSources, ...coolFrameSources };
   const walkFrameKeys = ['walk1', 'walk2', 'walk3'];
-  const coolFrameKeys = [
-    'cool_00',
-    'cool_01',
-    'cool_02',
-    'cool_03',
-    'cool_04',
-    'cool_05',
-    'cool_06',
-    'cool_07',
-    'cool_08',
-    'cool_09',
-    'cool_10',
-    'cool_11',
-    'cool_12',
-    'cool_13',
-    'cool_14',
-    'cool_15',
-    'cool_16',
-    'cool_17',
-    'cool_18',
-    'cool_19',
-    'cool_20',
-    'cool_21',
-    'cool_22',
-    'cool_23'
-  ];
+  const coolFrameKeys = Array.from({ length: 121 }, (_value, index) => {
+    return `cool_${String(index).padStart(3, '0')}`;
+  });
+  if (coolFrameKeys[0] !== 'cool_000' || coolFrameKeys[coolFrameKeys.length - 1] !== 'cool_120') {
+    throw new Error('Invalid cool frame range');
+  }
+  const coolFrameSources = coolFrameKeys.reduce((sources, key) => {
+    sources[key] = `assets/cool/${key}.png`;
+    return sources;
+  }, {});
+  const frameSources = { ...baseFrameSources, ...coolFrameSources };
   const frameKeys = ['idle', 'walk1', 'walk2', 'walk3', 'sit', ...coolFrameKeys];
   const frames = {};
 
@@ -338,7 +296,7 @@
 
   function syncCoolFrame(now) {
     if (!pet.action || !Array.isArray(pet.action.frames)) {
-      setFrame('cool_00');
+      setFrame('cool_000');
       return;
     }
 
@@ -517,20 +475,12 @@
     nextWalkFrameAt = now;
   }
 
-  function buildCoolSequence(loopCount) {
-    const pingPong = coolFrameKeys.concat(coolFrameKeys.slice(0, -1).reverse());
-    const sequence = [];
-
-    for (let index = 0; index < loopCount; index += 1) {
-      sequence.push(...pingPong);
-    }
-
-    return sequence;
+  function buildCoolSequence() {
+    return coolFrameKeys;
   }
 
   function startCool(now, _forcedDuration, options = {}) {
-    const loops = options.loops || (Math.random() < 0.28 ? 2 : 1);
-    const coolFrames = buildCoolSequence(loops);
+    const coolFrames = buildCoolSequence();
 
     pet.state = STATES.COOL;
     pet.idleFrame = 'idle';
