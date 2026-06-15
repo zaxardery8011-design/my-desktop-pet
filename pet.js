@@ -549,13 +549,14 @@
     petEl.style.setProperty('--pet-flip', pet.visualDir < 0 ? '-1' : '1');
     petEl.dataset.state = pet.state;
     petEl.dataset.action = pet.animation ? pet.animation.name : '';
+    const playingGeneratedScratch = pet.state === STATES.SCRATCH && pet.animation && pet.animation.name === 'scratch';
     petEl.classList.toggle('walking', pet.state === STATES.WALK);
     petEl.classList.toggle('running', pet.state === STATES.RUN);
     petEl.classList.toggle('idle-look', pet.state === STATES.IDLE_LOOK);
     petEl.classList.toggle('resting', pet.state === STATES.REST);
     petEl.classList.toggle('sleeping', pet.state === STATES.SLEEP);
     petEl.classList.toggle('stretching', pet.state === STATES.STRETCH);
-    petEl.classList.toggle('scratching', pet.state === STATES.SCRATCH);
+    petEl.classList.toggle('scratching', pet.state === STATES.SCRATCH && !playingGeneratedScratch);
     petEl.classList.toggle('peeking', pet.state === STATES.PEEK);
     petEl.classList.toggle('action-playing', pet.state === STATES.PET_ACTION);
     petEl.classList.toggle('cooling', pet.state === STATES.COOL);
