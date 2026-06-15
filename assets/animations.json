@@ -1,0 +1,178 @@
+{
+  "fps": 12,
+  "runtimeFrameSize": {
+    "w": 270,
+    "h": 480
+  },
+  "sourceManifest": "C:\\Users\\User\\Desktop\\AIWORK\\pet_factory\\outputs\\mrwu\\electron_assets\\assets\\animations.json",
+  "actions": {
+    "alert": {
+      "framesDir": "assets/actions/alert",
+      "framePattern": "alert_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "applaud": {
+      "framesDir": "assets/actions/applaud",
+      "framePattern": "applaud_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "cheer": {
+      "framesDir": "assets/actions/cheer",
+      "framePattern": "cheer_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "dig": {
+      "framesDir": "assets/actions/dig",
+      "framePattern": "dig_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "drink": {
+      "framesDir": "assets/actions/drink",
+      "framePattern": "drink_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "eat": {
+      "framesDir": "assets/actions/eat",
+      "framePattern": "eat_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "scratch": {
+      "framesDir": "assets/actions/scratch",
+      "framePattern": "scratch_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "sign": {
+      "framesDir": "assets/actions/sign",
+      "framePattern": "sign_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "sleep": {
+      "framesDir": "assets/actions/sleep",
+      "framePattern": "sleep_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "sniff": {
+      "framesDir": "assets/actions/sniff",
+      "framePattern": "sniff_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "walk": {
+      "framesDir": "assets/actions/walk",
+      "framePattern": "walk_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    },
+    "yawn": {
+      "framesDir": "assets/actions/yawn",
+      "framePattern": "yawn_%03d.png",
+      "frameCount": 96,
+      "fps": 12,
+      "frameSize": {
+        "w": 270,
+        "h": 480
+      },
+      "sourceFrameSize": {
+        "w": 720,
+        "h": 1280
+      }
+    }
+  }
+}

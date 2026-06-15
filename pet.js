@@ -21,6 +21,7 @@
     STRETCH: 'stretch',
     SCRATCH: 'scratch',
     PEEK: 'peek',
+    PET_ACTION: 'pet-action',
     COOL: 'cool',
     FALL: 'fall',
     DRAG: 'drag'
@@ -57,6 +58,7 @@
   const frameSources = { ...baseFrameSources, ...coolFrameSources };
   const frameKeys = ['idle', 'walk1', 'walk2', 'walk3', 'sit', ...coolFrameKeys];
   const frames = {};
+  const generatedActions = {};
 
   const stateDurations = {
     [STATES.WALK]: [2600, 7200],
@@ -87,6 +89,37 @@
     { state: STATES.STRETCH, weight: 3 },
     { state: STATES.SCRATCH, weight: 2 },
     { state: STATES.RUN, weight: 1 }
+  ];
+
+  const generatedBehaviorWeights = [
+    { action: 'walk', weight: 16 },
+    { action: 'sniff', weight: 13 },
+    { action: 'alert', weight: 9 },
+    { action: 'eat', weight: 9 },
+    { action: 'drink', weight: 8 },
+    { action: 'scratch', weight: 8 },
+    { action: 'dig', weight: 8 },
+    { action: 'yawn', weight: 7 },
+    { action: 'cheer', weight: 6 },
+    { action: 'sign', weight: 5 },
+    { action: 'applaud', weight: 5 },
+    { action: 'sleep', weight: 4 },
+    { state: STATES.PEEK, weight: 2 }
+  ];
+
+  const sleepyGeneratedBehaviorWeights = [
+    { action: 'sleep', weight: 30 },
+    { action: 'yawn', weight: 16 },
+    { action: 'drink', weight: 10 },
+    { action: 'sniff', weight: 9 },
+    { action: 'walk', weight: 8 },
+    { action: 'scratch', weight: 6 },
+    { action: 'eat', weight: 6 },
+    { action: 'alert', weight: 5 },
+    { action: 'dig', weight: 4 },
+    { action: 'sign', weight: 3 },
+    { action: 'cheer', weight: 2 },
+    { action: 'applaud', weight: 1 }
   ];
 
   const speechPool = [
@@ -121,6 +154,7 @@
     stateUntil: 0,
     idleFrame: 'idle',
     action: null,
+    animation: null,
     fall: null,
     lastInteractionAt: 0,
     lastCoolAt: -Infinity,
@@ -161,6 +195,57 @@
     return options[options.length - 1];
   }
 
+  function frameFileFromPattern(pattern, index) {
+    const padded = String(index).padStart(3, '0');
+    if (pattern.includes('%03d')) {
+      return pattern.replace('%03d', padded);
+    }
+    if (pattern.includes('{index}')) {
+      return pattern.replace('{index}', padded);
+    }
+    return pattern;
+  }
+
+  function registerGeneratedActionManifest(manifest) {
+    const actions = manifest && manifest.actions ? manifest.actions : {};
+
+    for (const [actionName, entry] of Object.entries(actions)) {
+      const frameCount = Number(entry.frameCount) || 0;
+      const fps = Number(entry.fps || manifest.fps || 12);
+      const framePattern = entry.framePattern || `${actionName}_%03d.png`;
+      const framesForAction = [];
+
+      for (let index = 0; index < frameCount; index += 1) {
+        const key = `action_${actionName}_${String(index).padStart(3, '0')}`;
+        frameSources[key] = `${entry.framesDir}/${frameFileFromPattern(framePattern, index)}`;
+        frameKeys.push(key);
+        framesForAction.push(key);
+      }
+
+      if (framesForAction.length > 0) {
+        generatedActions[actionName] = {
+          name: actionName,
+          frames: framesForAction,
+          fps,
+          frameMs: Math.max(1, Math.round(1000 / fps)),
+          durationMs: Math.max(1, Math.round((framesForAction.length * 1000) / fps))
+        };
+      }
+    }
+  }
+
+  async function loadGeneratedActionManifest() {
+    try {
+      const response = await fetch('assets/animations.json', { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      registerGeneratedActionManifest(await response.json());
+    } catch (error) {
+      console.warn('Generated action manifest unavailable; using built-in frames only.', error);
+    }
+  }
+
   function maxX() {
     return Math.max(0, window.innerWidth - pet.width);
   }
@@ -187,6 +272,7 @@
       STATES.WALK,
       STATES.RUN,
       STATES.PEEK,
+      STATES.PET_ACTION,
       STATES.COOL,
       STATES.FALL,
       STATES.DRAG
@@ -232,6 +318,7 @@
     petEl.style.setProperty('--pet-y', `${Math.round(pet.y)}px`);
     petEl.style.setProperty('--pet-flip', pet.visualDir < 0 ? '-1' : '1');
     petEl.dataset.state = pet.state;
+    petEl.dataset.action = pet.animation ? pet.animation.name : '';
     petEl.classList.toggle('walking', pet.state === STATES.WALK);
     petEl.classList.toggle('running', pet.state === STATES.RUN);
     petEl.classList.toggle('idle-look', pet.state === STATES.IDLE_LOOK);
@@ -240,6 +327,7 @@
     petEl.classList.toggle('stretching', pet.state === STATES.STRETCH);
     petEl.classList.toggle('scratching', pet.state === STATES.SCRATCH);
     petEl.classList.toggle('peeking', pet.state === STATES.PEEK);
+    petEl.classList.toggle('action-playing', pet.state === STATES.PET_ACTION);
     petEl.classList.toggle('cooling', pet.state === STATES.COOL);
     petEl.classList.toggle('falling', pet.state === STATES.FALL);
     petEl.classList.toggle('dragging', Boolean(dragging));
@@ -308,7 +396,54 @@
     setFrame(pet.action.frames[pet.action.frameIndex]);
   }
 
+  function clearGeneratedAnimation() {
+    pet.animation = null;
+  }
+
+  function setGeneratedAnimation(actionName, now, options = {}) {
+    const action = generatedActions[actionName];
+    if (!action) {
+      return false;
+    }
+
+    pet.animation = {
+      name: actionName,
+      frames: action.frames,
+      frameIndex: 0,
+      nextFrameAt: now + (options.frameMs || action.frameMs),
+      frameMs: options.frameMs || action.frameMs,
+      loop: Boolean(options.loop)
+    };
+    setFrame(action.frames[0]);
+    return true;
+  }
+
+  function syncGeneratedFrame(now) {
+    if (!pet.animation || !Array.isArray(pet.animation.frames)) {
+      return false;
+    }
+
+    while (now >= pet.animation.nextFrameAt) {
+      if (pet.animation.frameIndex >= pet.animation.frames.length - 1) {
+        if (!pet.animation.loop) {
+          break;
+        }
+        pet.animation.frameIndex = 0;
+      } else {
+        pet.animation.frameIndex += 1;
+      }
+      pet.animation.nextFrameAt += pet.animation.frameMs;
+    }
+
+    setFrame(pet.animation.frames[pet.animation.frameIndex]);
+    return true;
+  }
+
   function syncFrame(now) {
+    if (syncGeneratedFrame(now)) {
+      return;
+    }
+
     if (pet.state === STATES.COOL) {
       syncCoolFrame(now);
       return;
@@ -379,6 +514,7 @@
   }
 
   function startWalk(now, forcedDuration) {
+    clearGeneratedAnimation();
     pet.state = STATES.WALK;
     pet.idleFrame = 'idle';
     pet.action = {
@@ -391,9 +527,11 @@
     setStateUntil(STATES.WALK, now, forcedDuration);
     walkFrameIndex = 0;
     nextWalkFrameAt = now;
+    setGeneratedAnimation('walk', now, { loop: true });
   }
 
   function startRun(now, forcedDuration) {
+    clearGeneratedAnimation();
     pet.state = STATES.RUN;
     pet.idleFrame = 'idle';
     pet.action = {
@@ -406,9 +544,11 @@
     setStateUntil(STATES.RUN, now, forcedDuration);
     walkFrameIndex = 0;
     nextWalkFrameAt = now;
+    setGeneratedAnimation('walk', now, { frameMs: runFrameMs, loop: true });
   }
 
   function startIdleLook(now, forcedDuration) {
+    clearGeneratedAnimation();
     pet.state = STATES.IDLE_LOOK;
     pet.idleFrame = 'idle';
     pet.action = {
@@ -422,6 +562,7 @@
   }
 
   function startRest(now, forcedDuration) {
+    clearGeneratedAnimation();
     pet.state = STATES.REST;
     pet.idleFrame = 'sit';
     pet.action = null;
@@ -430,15 +571,18 @@
   }
 
   function startSleep(now, forcedDuration) {
+    clearGeneratedAnimation();
     pet.state = STATES.SLEEP;
     pet.idleFrame = 'sit';
     pet.action = null;
     pet.fall = null;
     setStateUntil(STATES.SLEEP, now, forcedDuration);
+    setGeneratedAnimation('sleep', now, { loop: true });
     showSleepZzz();
   }
 
   function startStretch(now, forcedDuration) {
+    clearGeneratedAnimation();
     pet.state = STATES.STRETCH;
     pet.idleFrame = 'idle';
     pet.action = null;
@@ -447,14 +591,17 @@
   }
 
   function startScratch(now, forcedDuration) {
+    clearGeneratedAnimation();
     pet.state = STATES.SCRATCH;
     pet.idleFrame = 'idle';
     pet.action = null;
     pet.fall = null;
     setStateUntil(STATES.SCRATCH, now, forcedDuration);
+    setGeneratedAnimation('scratch', now, { loop: true });
   }
 
   function startPeek(now, forcedDuration) {
+    clearGeneratedAnimation();
     const targetEdge = Math.random() < 0.5 ? 'left' : 'right';
     const targetX = targetEdge === 'left' ? 0 : maxX();
 
@@ -482,6 +629,7 @@
   function startCool(now, _forcedDuration, options = {}) {
     const coolFrames = buildCoolSequence();
 
+    clearGeneratedAnimation();
     pet.state = STATES.COOL;
     pet.idleFrame = 'idle';
     pet.action = {
@@ -501,6 +649,7 @@
   }
 
   function startFall(now, initialVelocity) {
+    clearGeneratedAnimation();
     pet.state = STATES.FALL;
     pet.idleFrame = 'idle';
     pet.action = null;
@@ -511,6 +660,40 @@
       landDuration: 430
     };
     hideSleepZzz();
+  }
+
+  function startPetAction(actionName, now, forcedDuration, options = {}) {
+    const generated = generatedActions[actionName];
+    if (!generated) {
+      startState(STATES.IDLE_LOOK, now, rand(900, 1600));
+      return false;
+    }
+
+    if (actionName === 'walk') {
+      startWalk(now, forcedDuration || generated.durationMs);
+      return true;
+    }
+    if (actionName === 'sleep') {
+      startSleep(now, forcedDuration || Math.max(generated.durationMs, 3000));
+      return true;
+    }
+    if (actionName === 'scratch') {
+      startScratch(now, forcedDuration || generated.durationMs);
+      return true;
+    }
+
+    clearGeneratedAnimation();
+    hideSleepZzz();
+    pet.state = STATES.PET_ACTION;
+    pet.idleFrame = 'idle';
+    pet.action = { actionName };
+    pet.fall = null;
+    if (Math.random() < 0.35) {
+      pet.dir = chooseDirection();
+    }
+    pet.stateUntil = now + (forcedDuration || generated.durationMs + 120);
+    setGeneratedAnimation(actionName, now, { loop: Boolean(options.loop) });
+    return true;
   }
 
   function startState(state, now, forcedDuration, options = {}) {
@@ -537,14 +720,32 @@
     }
   }
 
-  function chooseNextState(now) {
+  function actionPoolAvailable(pool) {
+    return pool.filter((item) => {
+      return item.state || (item.action && generatedActions[item.action]);
+    });
+  }
+
+  function chooseNextBehavior(now) {
     const inactiveFor = now - pet.lastInteractionAt;
+    const generatedPool = actionPoolAvailable(
+      inactiveFor > sleepAfterMs ? sleepyGeneratedBehaviorWeights : generatedBehaviorWeights
+    );
+    if (generatedPool.length > 0) {
+      return weightedRandom(generatedPool);
+    }
+
     const pool = inactiveFor > sleepAfterMs ? sleepyBehaviorWeights : calmBehaviorWeights;
-    return weightedRandom(pool).state;
+    return { state: weightedRandom(pool).state };
   }
 
   function startNextState(now) {
-    startState(chooseNextState(now), now);
+    const behavior = chooseNextBehavior(now);
+    if (behavior.action) {
+      startPetAction(behavior.action, now);
+      return;
+    }
+    startState(behavior.state, now);
   }
 
   function maybeStartRandomCool(now) {
@@ -727,6 +928,10 @@
         }
       } else if (pet.state === STATES.PEEK) {
         updatePeek(now, dt);
+      } else if (pet.state === STATES.PET_ACTION) {
+        if (now >= pet.stateUntil) {
+          startNextState(now);
+        }
       } else if (pet.state === STATES.COOL) {
         updateCool(now);
       } else if (pet.state === STATES.FALL) {
@@ -786,6 +991,7 @@
     pet.state = STATES.DRAG;
     pet.idleFrame = 'idle';
     pet.action = null;
+    clearGeneratedAnimation();
     pet.fall = null;
     hideSleepZzz();
     setFrame('idle');
@@ -879,10 +1085,13 @@
   function exposeDebugState() {
     window.__mrwuPetDebug = {
       STATES,
+      actions: Object.keys(generatedActions),
       snapshot() {
         return {
           state: pet.state,
           frame: currentFrameKey,
+          action: pet.animation ? pet.animation.name : null,
+          actionFrameIndex: pet.animation ? pet.animation.frameIndex : null,
           coolFrameIndex: pet.state === STATES.COOL && pet.action ? pet.action.frameIndex : null,
           x: Math.round(pet.x),
           y: Math.round(pet.y),
@@ -927,15 +1136,29 @@
         };
       },
       forceState(state) {
-        if (Object.values(STATES).includes(state) && state !== STATES.FALL && state !== STATES.DRAG) {
+        if (
+          Object.values(STATES).includes(state) &&
+          state !== STATES.PET_ACTION &&
+          state !== STATES.FALL &&
+          state !== STATES.DRAG
+        ) {
           startState(state, performance.now());
           applyPet();
         }
+      },
+      forceAction(actionName) {
+        if (generatedActions[actionName]) {
+          startPetAction(actionName, performance.now());
+          applyPet();
+          return true;
+        }
+        return false;
       }
     };
   }
 
   async function boot() {
+    await loadGeneratedActionManifest();
     await loadFrames();
     const now = performance.now();
     setFrame('idle');
