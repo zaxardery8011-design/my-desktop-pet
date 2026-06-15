@@ -9,6 +9,7 @@
     onScaleChanged() { return () => {}; }
   };
   const petEl = document.getElementById('pet');
+  const petSprite = document.getElementById('petSprite');
   const petImage = document.getElementById('petImage');
   const bubble = document.getElementById('bubble');
   const sleepZzz = document.getElementById('sleepZzz');
@@ -28,6 +29,33 @@
     COOL: 'cool',
     FALL: 'fall',
     DRAG: 'drag'
+  });
+
+  const BEHAVIOR_STATES = Object.freeze({
+    IDLE: 'idle',
+    MOVE: 'move',
+    GROOM: 'groom',
+    ALERT: 'alert',
+    FEED: 'feed',
+    REST: 'rest',
+    SOCIAL: 'social',
+    PLAY: 'play',
+    SPECIAL: 'special'
+  });
+
+  const ACTION_TAXONOMY = Object.freeze({
+    walk: BEHAVIOR_STATES.MOVE,
+    scratch: BEHAVIOR_STATES.GROOM,
+    eat: BEHAVIOR_STATES.FEED,
+    sleep: BEHAVIOR_STATES.REST,
+    sniff: BEHAVIOR_STATES.ALERT,
+    alert: BEHAVIOR_STATES.ALERT,
+    dig: BEHAVIOR_STATES.PLAY,
+    yawn: BEHAVIOR_STATES.REST,
+    cheer: BEHAVIOR_STATES.SOCIAL,
+    sign: BEHAVIOR_STATES.SPECIAL,
+    applaud: BEHAVIOR_STATES.SOCIAL,
+    drink: BEHAVIOR_STATES.FEED
   });
 
   const groundGap = 6;
@@ -74,56 +102,155 @@
     [STATES.PEEK]: [3200, 5400]
   };
 
-  const calmBehaviorWeights = [
-    { state: STATES.WALK, weight: 42 },
-    { state: STATES.IDLE_LOOK, weight: 27 },
-    { state: STATES.REST, weight: 16 },
-    { state: STATES.STRETCH, weight: 5 },
-    { state: STATES.SCRATCH, weight: 5 },
-    { state: STATES.RUN, weight: 3 },
-    { state: STATES.PEEK, weight: 2 }
-  ];
-
-  const sleepyBehaviorWeights = [
-    { state: STATES.SLEEP, weight: 54 },
-    { state: STATES.REST, weight: 21 },
-    { state: STATES.IDLE_LOOK, weight: 12 },
-    { state: STATES.WALK, weight: 7 },
-    { state: STATES.STRETCH, weight: 3 },
-    { state: STATES.SCRATCH, weight: 2 },
-    { state: STATES.RUN, weight: 1 }
-  ];
-
-  const generatedBehaviorWeights = [
-    { action: 'walk', weight: 16 },
-    { action: 'sniff', weight: 13 },
-    { action: 'alert', weight: 9 },
-    { action: 'eat', weight: 9 },
-    { action: 'drink', weight: 8 },
-    { action: 'scratch', weight: 8 },
-    { action: 'dig', weight: 8 },
-    { action: 'yawn', weight: 7 },
-    { action: 'cheer', weight: 6 },
-    { action: 'sign', weight: 5 },
-    { action: 'applaud', weight: 5 },
-    { action: 'sleep', weight: 4 },
-    { state: STATES.PEEK, weight: 2 }
-  ];
-
-  const sleepyGeneratedBehaviorWeights = [
-    { action: 'sleep', weight: 30 },
-    { action: 'yawn', weight: 16 },
-    { action: 'drink', weight: 10 },
-    { action: 'sniff', weight: 9 },
-    { action: 'walk', weight: 8 },
-    { action: 'scratch', weight: 6 },
-    { action: 'eat', weight: 6 },
-    { action: 'alert', weight: 5 },
-    { action: 'dig', weight: 4 },
-    { action: 'sign', weight: 3 },
-    { action: 'cheer', weight: 2 },
-    { action: 'applaud', weight: 1 }
-  ];
+  const BEHAVIOR_TREE_CONFIG = Object.freeze({
+    crossFadeMs: 150,
+    idleBiasAfterMs: sleepAfterMs,
+    states: {
+      [BEHAVIOR_STATES.IDLE]: {
+        durationMs: [1800, 5200],
+        actions: [
+          { state: STATES.IDLE_LOOK, weight: 76 },
+          { state: STATES.STRETCH, weight: 24 }
+        ],
+        transitions: [
+          { state: BEHAVIOR_STATES.IDLE, weight: 33 },
+          { state: BEHAVIOR_STATES.MOVE, weight: 24 },
+          { state: BEHAVIOR_STATES.GROOM, weight: 15 },
+          { state: BEHAVIOR_STATES.PLAY, weight: 13 },
+          { state: BEHAVIOR_STATES.REST, weight: 8 },
+          { state: BEHAVIOR_STATES.ALERT, weight: 5 },
+          { state: BEHAVIOR_STATES.SPECIAL, weight: 2 }
+        ]
+      },
+      [BEHAVIOR_STATES.MOVE]: {
+        durationMs: [2600, 7600],
+        actions: [
+          { action: 'walk', weight: 58, loop: true },
+          { state: STATES.WALK, weight: 20 },
+          { state: STATES.PEEK, weight: 14 },
+          { state: STATES.RUN, weight: 8 }
+        ],
+        transitions: [
+          { state: BEHAVIOR_STATES.IDLE, weight: 24 },
+          { state: BEHAVIOR_STATES.REST, weight: 24 },
+          { state: BEHAVIOR_STATES.GROOM, weight: 16 },
+          { state: BEHAVIOR_STATES.ALERT, weight: 12 },
+          { state: BEHAVIOR_STATES.PLAY, weight: 10 },
+          { state: BEHAVIOR_STATES.FEED, weight: 6 },
+          { state: BEHAVIOR_STATES.SOCIAL, weight: 5 },
+          { state: BEHAVIOR_STATES.SPECIAL, weight: 3 }
+        ]
+      },
+      [BEHAVIOR_STATES.GROOM]: {
+        durationMs: [2400, 6800],
+        actions: [
+          { action: 'scratch', weight: 78, loop: true },
+          { state: STATES.SCRATCH, weight: 22 }
+        ],
+        transitions: [
+          { state: BEHAVIOR_STATES.IDLE, weight: 54 },
+          { state: BEHAVIOR_STATES.REST, weight: 20 },
+          { state: BEHAVIOR_STATES.MOVE, weight: 10 },
+          { state: BEHAVIOR_STATES.ALERT, weight: 8 },
+          { state: BEHAVIOR_STATES.SOCIAL, weight: 6 },
+          { state: BEHAVIOR_STATES.SPECIAL, weight: 2 }
+        ]
+      },
+      [BEHAVIOR_STATES.ALERT]: {
+        durationMs: [1700, 5200],
+        actions: [
+          { action: 'sniff', weight: 44, loop: true },
+          { action: 'alert', weight: 40, loop: true },
+          { state: STATES.IDLE_LOOK, weight: 16 }
+        ],
+        transitions: [
+          { state: BEHAVIOR_STATES.IDLE, weight: 62 },
+          { state: BEHAVIOR_STATES.MOVE, weight: 18 },
+          { state: BEHAVIOR_STATES.GROOM, weight: 8 },
+          { state: BEHAVIOR_STATES.REST, weight: 5 },
+          { state: BEHAVIOR_STATES.PLAY, weight: 5 },
+          { state: BEHAVIOR_STATES.SPECIAL, weight: 2 }
+        ]
+      },
+      [BEHAVIOR_STATES.FEED]: {
+        durationMs: [3600, 8600],
+        actions: [
+          { action: 'eat', weight: 56, loop: true },
+          { action: 'drink', weight: 38, loop: true },
+          { state: STATES.REST, weight: 6 }
+        ],
+        transitions: [
+          { state: BEHAVIOR_STATES.GROOM, weight: 90 },
+          { state: BEHAVIOR_STATES.REST, weight: 6 },
+          { state: BEHAVIOR_STATES.IDLE, weight: 4 }
+        ]
+      },
+      [BEHAVIOR_STATES.REST]: {
+        durationMs: [5200, 18000],
+        actions: [
+          { action: 'sleep', weight: 46, loop: true },
+          { action: 'yawn', weight: 28 },
+          { state: STATES.REST, weight: 18 },
+          { state: STATES.SLEEP, weight: 8 }
+        ],
+        transitions: [
+          { state: BEHAVIOR_STATES.REST, weight: 88 },
+          { state: BEHAVIOR_STATES.IDLE, weight: 7 },
+          { state: BEHAVIOR_STATES.GROOM, weight: 2 },
+          { state: BEHAVIOR_STATES.MOVE, weight: 1 },
+          { state: BEHAVIOR_STATES.ALERT, weight: 1 },
+          { state: BEHAVIOR_STATES.SPECIAL, weight: 1 }
+        ]
+      },
+      [BEHAVIOR_STATES.SOCIAL]: {
+        durationMs: [2800, 7600],
+        actions: [
+          { action: 'cheer', weight: 48 },
+          { action: 'applaud', weight: 44 },
+          { state: STATES.IDLE_LOOK, weight: 8 }
+        ],
+        transitions: [
+          { state: BEHAVIOR_STATES.IDLE, weight: 45 },
+          { state: BEHAVIOR_STATES.PLAY, weight: 24 },
+          { state: BEHAVIOR_STATES.GROOM, weight: 10 },
+          { state: BEHAVIOR_STATES.MOVE, weight: 10 },
+          { state: BEHAVIOR_STATES.SPECIAL, weight: 6 },
+          { state: BEHAVIOR_STATES.REST, weight: 5 }
+        ]
+      },
+      [BEHAVIOR_STATES.PLAY]: {
+        durationMs: [2600, 7200],
+        actions: [
+          { action: 'dig', weight: 76, loop: true },
+          { state: STATES.RUN, weight: 24 }
+        ],
+        transitions: [
+          { state: BEHAVIOR_STATES.IDLE, weight: 30 },
+          { state: BEHAVIOR_STATES.REST, weight: 22 },
+          { state: BEHAVIOR_STATES.MOVE, weight: 18 },
+          { state: BEHAVIOR_STATES.SOCIAL, weight: 12 },
+          { state: BEHAVIOR_STATES.GROOM, weight: 8 },
+          { state: BEHAVIOR_STATES.ALERT, weight: 6 },
+          { state: BEHAVIOR_STATES.SPECIAL, weight: 4 }
+        ]
+      },
+      [BEHAVIOR_STATES.SPECIAL]: {
+        durationMs: [4200, 8200],
+        actions: [
+          { action: 'sign', weight: 58 },
+          { state: STATES.COOL, weight: 42 }
+        ],
+        transitions: [
+          { state: BEHAVIOR_STATES.IDLE, weight: 70 },
+          { state: BEHAVIOR_STATES.SOCIAL, weight: 10 },
+          { state: BEHAVIOR_STATES.REST, weight: 8 },
+          { state: BEHAVIOR_STATES.MOVE, weight: 6 },
+          { state: BEHAVIOR_STATES.GROOM, weight: 4 },
+          { state: BEHAVIOR_STATES.ALERT, weight: 2 }
+        ]
+      }
+    }
+  });
 
   const speechPool = [
     '嗯？',
@@ -159,6 +286,8 @@
     action: null,
     animation: null,
     fall: null,
+    behaviorState: BEHAVIOR_STATES.MOVE,
+    behaviorStartedAt: 0,
     lastInteractionAt: 0,
     lastCoolAt: -Infinity,
     nextCursorLookAt: 0
@@ -172,6 +301,21 @@
   let dragging = null;
   let bubbleTimer = null;
   let petScale = 1;
+  const frameFadeImage = petImage.cloneNode(false);
+  let frameFadeAnimation = null;
+  let pendingFrameCrossFade = false;
+
+  frameFadeImage.removeAttribute('id');
+  frameFadeImage.setAttribute('aria-hidden', 'true');
+  frameFadeImage.style.position = 'absolute';
+  frameFadeImage.style.left = '50%';
+  frameFadeImage.style.bottom = '0';
+  frameFadeImage.style.opacity = '0';
+  frameFadeImage.style.transform = 'translateX(-50%)';
+  frameFadeImage.style.pointerEvents = 'none';
+  if (petSprite) {
+    petSprite.appendChild(frameFadeImage);
+  }
 
   function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
@@ -214,6 +358,71 @@
     }
 
     return options[options.length - 1];
+  }
+
+  function setBehaviorState(behaviorState, now) {
+    if (!behaviorState) {
+      return;
+    }
+
+    pet.behaviorState = behaviorState;
+    pet.behaviorStartedAt = now;
+  }
+
+  function inferBehaviorStateForState(state) {
+    if (state === STATES.WALK || state === STATES.RUN || state === STATES.PEEK) {
+      return BEHAVIOR_STATES.MOVE;
+    }
+    if (state === STATES.SCRATCH) {
+      return BEHAVIOR_STATES.GROOM;
+    }
+    if (state === STATES.REST || state === STATES.SLEEP) {
+      return BEHAVIOR_STATES.REST;
+    }
+    if (state === STATES.COOL) {
+      return BEHAVIOR_STATES.SPECIAL;
+    }
+    if (state === STATES.IDLE_LOOK || state === STATES.STRETCH) {
+      return BEHAVIOR_STATES.IDLE;
+    }
+    if (state === STATES.DRAG || state === STATES.FALL) {
+      return BEHAVIOR_STATES.ALERT;
+    }
+    return null;
+  }
+
+  function inferBehaviorStateForAction(actionName) {
+    return ACTION_TAXONOMY[actionName] || null;
+  }
+
+  function queueFrameCrossFade() {
+    pendingFrameCrossFade = true;
+  }
+
+  function fadePreviousFrame(previousSrc) {
+    if (!previousSrc || !petSprite || !frameFadeImage.animate) {
+      return;
+    }
+
+    if (frameFadeAnimation) {
+      frameFadeAnimation.cancel();
+    }
+
+    frameFadeImage.src = previousSrc;
+    frameFadeImage.style.opacity = '1';
+    frameFadeAnimation = frameFadeImage.animate(
+      [{ opacity: 1 }, { opacity: 0 }],
+      {
+        duration: BEHAVIOR_TREE_CONFIG.crossFadeMs,
+        easing: 'ease-out',
+        fill: 'forwards'
+      }
+    );
+    frameFadeAnimation.onfinish = () => {
+      frameFadeImage.style.opacity = '0';
+      frameFadeImage.removeAttribute('src');
+      frameFadeAnimation = null;
+    };
   }
 
   function frameFileFromPattern(pattern, index) {
@@ -387,12 +596,19 @@
   function setFrame(frameKey) {
     const frame = frames[frameKey];
     if (!frame || currentFrameKey === frameKey) {
+      pendingFrameCrossFade = false;
       return;
     }
 
+    const previousSrc = petImage.currentSrc || petImage.src;
+    const shouldCrossFade = pendingFrameCrossFade;
+    pendingFrameCrossFade = false;
     currentFrameKey = frameKey;
     petImage.src = frame.src;
     petEl.dataset.frame = frameKey;
+    if (shouldCrossFade) {
+      fadePreviousFrame(previousSrc);
+    }
     buildAlphaMap(frame);
   }
 
@@ -436,6 +652,9 @@
       frameMs: options.frameMs || action.frameMs,
       loop: Boolean(options.loop)
     };
+    if (options.crossFade) {
+      queueFrameCrossFade();
+    }
     setFrame(action.frames[0]);
     return true;
   }
@@ -672,6 +891,7 @@
 
   function startFall(now, initialVelocity) {
     clearGeneratedAnimation();
+    setBehaviorState(BEHAVIOR_STATES.ALERT, now);
     pet.state = STATES.FALL;
     pet.idleFrame = 'idle';
     pet.action = null;
@@ -685,9 +905,12 @@
   }
 
   function startPetAction(actionName, now, forcedDuration, options = {}) {
+    const behaviorState = options.behaviorState || inferBehaviorStateForAction(actionName);
+    setBehaviorState(behaviorState, now);
+
     const generated = generatedActions[actionName];
     if (!generated) {
-      startState(STATES.IDLE_LOOK, now, rand(900, 1600));
+      startState(STATES.IDLE_LOOK, now, rand(900, 1600), { behaviorState });
       return false;
     }
 
@@ -713,12 +936,17 @@
     if (Math.random() < 0.35) {
       pet.dir = chooseDirection();
     }
-    pet.stateUntil = now + (forcedDuration || generated.durationMs + 120);
-    setGeneratedAnimation(actionName, now, { loop: Boolean(options.loop) });
+    const duration = forcedDuration || generated.durationMs + 120;
+    pet.stateUntil = now + (options.loop ? duration : Math.max(duration, generated.durationMs + 120));
+    setGeneratedAnimation(actionName, now, {
+      loop: Boolean(options.loop),
+      crossFade: Boolean(options.crossFade)
+    });
     return true;
   }
 
   function startState(state, now, forcedDuration, options = {}) {
+    setBehaviorState(options.behaviorState || inferBehaviorStateForState(state), now);
     hideSleepZzz();
 
     if (state === STATES.WALK) {
@@ -748,26 +976,74 @@
     });
   }
 
-  function chooseNextBehavior(now) {
-    const inactiveFor = now - pet.lastInteractionAt;
-    const generatedPool = actionPoolAvailable(
-      inactiveFor > sleepAfterMs ? sleepyGeneratedBehaviorWeights : generatedBehaviorWeights
+  function behaviorConfigFor(behaviorState) {
+    return (
+      BEHAVIOR_TREE_CONFIG.states[behaviorState] ||
+      BEHAVIOR_TREE_CONFIG.states[BEHAVIOR_STATES.IDLE]
     );
-    if (generatedPool.length > 0) {
-      return weightedRandom(generatedPool);
+  }
+
+  function contextTransitions(transitions, now) {
+    const inactiveFor = now - pet.lastInteractionAt;
+    if (inactiveFor <= BEHAVIOR_TREE_CONFIG.idleBiasAfterMs) {
+      return transitions;
     }
 
-    const pool = inactiveFor > sleepAfterMs ? sleepyBehaviorWeights : calmBehaviorWeights;
-    return { state: weightedRandom(pool).state };
+    return transitions.map((entry) => {
+      let weight = entry.weight;
+      if (entry.state === BEHAVIOR_STATES.REST) {
+        weight *= 2.4;
+      } else if (
+        entry.state === BEHAVIOR_STATES.PLAY ||
+        entry.state === BEHAVIOR_STATES.SOCIAL ||
+        entry.state === BEHAVIOR_STATES.SPECIAL
+      ) {
+        weight *= 0.55;
+      } else if (entry.state === BEHAVIOR_STATES.MOVE) {
+        weight *= 0.75;
+      }
+      return { state: entry.state, weight };
+    });
+  }
+
+  function chooseBehaviorAction(config) {
+    const available = actionPoolAvailable(config.actions);
+    if (available.length > 0) {
+      return weightedRandom(available);
+    }
+    return { state: STATES.IDLE_LOOK };
+  }
+
+  function chooseNextBehaviorState(now) {
+    const config = behaviorConfigFor(pet.behaviorState);
+    return weightedRandom(contextTransitions(config.transitions, now)).state;
+  }
+
+  function startBehaviorState(behaviorState, now, forcedDuration, options = {}) {
+    const config = behaviorConfigFor(behaviorState);
+    const duration = forcedDuration || rand(config.durationMs[0], config.durationMs[1]);
+    const entry = chooseBehaviorAction(config);
+
+    setBehaviorState(behaviorState, now);
+    queueFrameCrossFade();
+
+    if (entry.action) {
+      startPetAction(entry.action, now, duration, {
+        behaviorState,
+        loop: Boolean(entry.loop),
+        crossFade: true
+      });
+      return;
+    }
+
+    startState(entry.state, now, duration, {
+      ...options,
+      behaviorState
+    });
   }
 
   function startNextState(now) {
-    const behavior = chooseNextBehavior(now);
-    if (behavior.action) {
-      startPetAction(behavior.action, now);
-      return;
-    }
-    startState(behavior.state, now);
+    startBehaviorState(chooseNextBehaviorState(now), now);
   }
 
   function maybeStartRandomCool(now) {
@@ -775,7 +1051,9 @@
       now - pet.lastCoolAt >= coolRandomCooldownMs &&
       Math.random() < coolRandomChance
     ) {
+      queueFrameCrossFade();
       startState(STATES.COOL, now, null, {
+        behaviorState: BEHAVIOR_STATES.SPECIAL,
         speak: Math.random() < 0.55
       });
       return true;
@@ -813,7 +1091,7 @@
     }
   }
 
-  function updateWalkLike(now, dt, nextWhenDone) {
+  function updateWalkLike(now, dt) {
     const before = pet.x;
     pet.x += pet.dir * pet.speed * dt;
     const edgeHit = pet.x <= 0 || pet.x >= maxX();
@@ -827,7 +1105,15 @@
       } else if (pet.x !== before) {
         pet.dir = pet.x > before ? 1 : -1;
       }
-      startState(nextWhenDone, now, rand(850, 2100));
+      if (edgeHit) {
+        startBehaviorState(
+          Math.random() < 0.65 ? BEHAVIOR_STATES.GROOM : BEHAVIOR_STATES.ALERT,
+          now,
+          rand(1800, 3600)
+        );
+        return;
+      }
+      startNextState(now);
     }
   }
 
@@ -900,7 +1186,7 @@
 
   function updateCool(now) {
     if (!pet.action || now >= pet.stateUntil) {
-      startState(STATES.IDLE_LOOK, now, rand(900, 1700));
+      startNextState(now);
     }
   }
 
@@ -930,9 +1216,9 @@
 
     if (!dragging) {
       if (pet.state === STATES.WALK) {
-        updateWalkLike(now, dt, STATES.IDLE_LOOK);
+        updateWalkLike(now, dt);
       } else if (pet.state === STATES.RUN) {
-        updateWalkLike(now, dt, STATES.IDLE_LOOK);
+        updateWalkLike(now, dt);
       } else if (pet.state === STATES.IDLE_LOOK) {
         updateIdleLook(now);
       } else if (pet.state === STATES.REST) {
@@ -1011,6 +1297,7 @@
       moved: false
     };
     pet.state = STATES.DRAG;
+    setBehaviorState(BEHAVIOR_STATES.ALERT, now);
     pet.idleFrame = 'idle';
     pet.action = null;
     clearGeneratedAnimation();
@@ -1056,7 +1343,9 @@
 
     const now = performance.now();
     markInteraction(now);
+    queueFrameCrossFade();
     startState(STATES.COOL, now, null, {
+      behaviorState: BEHAVIOR_STATES.SPECIAL,
       loops: 2,
       speak: true
     });
@@ -1107,10 +1396,14 @@
   function exposeDebugState() {
     window.__mrwuPetDebug = {
       STATES,
+      BEHAVIOR_STATES,
+      ACTION_TAXONOMY,
+      behaviorTree: BEHAVIOR_TREE_CONFIG,
       actions: Object.keys(generatedActions),
       snapshot() {
         return {
           state: pet.state,
+          behaviorState: pet.behaviorState,
           frame: currentFrameKey,
           action: pet.animation ? pet.animation.name : null,
           actionFrameIndex: pet.animation ? pet.animation.frameIndex : null,
@@ -1171,6 +1464,14 @@
           applyPet();
         }
       },
+      forceBehaviorState(behaviorState) {
+        if (BEHAVIOR_TREE_CONFIG.states[behaviorState]) {
+          startBehaviorState(behaviorState, performance.now());
+          applyPet();
+          return true;
+        }
+        return false;
+      },
       forceAction(actionName) {
         if (generatedActions[actionName]) {
           startPetAction(actionName, performance.now());
@@ -1198,7 +1499,7 @@
     pet.x = rand(20, Math.max(21, maxX() - 20));
     pet.y = groundY();
     pet.lastInteractionAt = now;
-    startState(STATES.WALK, now);
+    startBehaviorState(BEHAVIOR_STATES.MOVE, now);
     if (new URLSearchParams(window.location.search).has('debug')) {
       exposeDebugState();
     }
