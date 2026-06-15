@@ -3,7 +3,10 @@
 
   const api = window.mrwuPet || {
     setIgnoreMouseEvents() {},
-    showContextMenu() {}
+    showContextMenu() {},
+    async getScale() { return 1; },
+    async setScale(scale) { return scale; },
+    onScaleChanged() { return () => {}; }
   };
   const petEl = document.getElementById('pet');
   const petImage = document.getElementById('petImage');
@@ -168,9 +171,27 @@
   let ignoreMouse = true;
   let dragging = null;
   let bubbleTimer = null;
+  let petScale = 1;
 
   function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
+  }
+
+  function normalizePetScale(value) {
+    const scale = Number(value);
+    return Number.isFinite(scale) ? clamp(scale, 0.5, 3) : 1;
+  }
+
+  function setPetScale(value) {
+    const nextScale = normalizePetScale(value);
+    if (Math.abs(petScale - nextScale) < 0.001) {
+      return;
+    }
+
+    petScale = nextScale;
+    if (Object.keys(frames).length > 0) {
+      measurePet();
+    }
   }
 
   function rand(min, max) {
@@ -341,7 +362,8 @@
 
   function measurePet() {
     const viewportHeight = window.innerHeight || 720;
-    const height = clamp(Math.round(viewportHeight * 0.16), minPetHeight, maxPetHeight);
+    const baseHeight = clamp(Math.round(viewportHeight * 0.16), minPetHeight, maxPetHeight);
+    const height = Math.max(1, Math.round(baseHeight * petScale));
     const maxAspect = frameKeys.reduce((max, key) => Math.max(max, frameAspect(frames[key])), 1);
     pet.width = Math.ceil(height * maxAspect);
     pet.height = height;
@@ -1095,6 +1117,9 @@
           coolFrameIndex: pet.state === STATES.COOL && pet.action ? pet.action.frameIndex : null,
           x: Math.round(pet.x),
           y: Math.round(pet.y),
+          scale: petScale,
+          width: pet.width,
+          height: pet.height,
           dir: pet.dir,
           visualDir: pet.visualDir,
           bubble: bubble.textContent,
@@ -1160,6 +1185,13 @@
   async function boot() {
     await loadGeneratedActionManifest();
     await loadFrames();
+    try {
+      petScale = normalizePetScale(await api.getScale());
+      api.onScaleChanged(setPetScale);
+    } catch (error) {
+      console.warn('Pet scale setting unavailable; using 1x.', error);
+      petScale = 1;
+    }
     const now = performance.now();
     setFrame('idle');
     measurePet();

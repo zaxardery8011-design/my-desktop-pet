@@ -23,7 +23,7 @@ npm start
 - CSS waddle / breathe / hop 動畫。
 - 點擊穿透：`setIgnoreMouseEvents(true, { forward: true })`，滑鼠在 Mr.Wu 實體像素上才關閉穿透。
 - 可拖曳，放開後平滑落回地面。
-- 右鍵原生選單：退出。
+- 右鍵原生選單：大小 0.5x–3x（會記住下次啟動）、退出。
 
 ## 後續計畫
 

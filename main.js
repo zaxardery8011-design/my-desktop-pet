@@ -1,8 +1,53 @@
 const path = require('node:path');
+const fs = require('node:fs');
 const { app, BrowserWindow, ipcMain, Menu, screen } = require('electron');
 
 let win = null;
 let ignoringMouse = null;
+let petScale = 1;
+
+const scaleOptions = [0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3];
+
+if (process.env.MRWU_PET_USER_DATA_DIR) {
+  const userDataDir = path.resolve(process.env.MRWU_PET_USER_DATA_DIR);
+  fs.mkdirSync(userDataDir, { recursive: true });
+  app.setPath('userData', userDataDir);
+}
+
+function clampScale(value) {
+  const scale = Number(value);
+  if (!Number.isFinite(scale)) {
+    return 1;
+  }
+  return Math.min(Math.max(scale, 0.5), 3);
+}
+
+function settingsPath() {
+  return path.join(app.getPath('userData'), 'settings.json');
+}
+
+function readSettings() {
+  try {
+    const payload = JSON.parse(fs.readFileSync(settingsPath(), 'utf8'));
+    petScale = clampScale(payload.petScale);
+  } catch (_error) {
+    petScale = 1;
+  }
+}
+
+function writeSettings() {
+  const file = settingsPath();
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, JSON.stringify({ petScale }, null, 2), 'utf8');
+}
+
+function setPetScale(value) {
+  petScale = clampScale(value);
+  writeSettings();
+  if (win && !win.isDestroyed()) {
+    win.webContents.send('pet:scale-changed', petScale);
+  }
+}
 
 function setMousePassthrough(ignore) {
   if (!win || win.isDestroyed() || ignoringMouse === ignore) {
@@ -24,6 +69,16 @@ function showContextMenu(point = {}) {
   }
 
   const menu = Menu.buildFromTemplate([
+    {
+      label: '大小',
+      submenu: scaleOptions.map((scale) => ({
+        label: `${scale}x`,
+        type: 'radio',
+        checked: Math.abs(petScale - scale) < 0.001,
+        click: () => setPetScale(scale)
+      }))
+    },
+    { type: 'separator' },
     {
       label: '退出',
       accelerator: 'CmdOrCtrl+Q',
@@ -65,7 +120,8 @@ function createWindow() {
 
   win.setMenuBarVisibility(false);
   win.setAlwaysOnTop(true, 'screen-saver');
-  win.loadFile(path.join(__dirname, 'pet.html'));
+  const loadOptions = process.env.MRWU_PET_DEBUG === '1' ? { query: { debug: '1' } } : undefined;
+  win.loadFile(path.join(__dirname, 'pet.html'), loadOptions);
 
   win.once('ready-to-show', () => {
     win.showInactive();
@@ -79,6 +135,7 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+  readSettings();
   createWindow();
 
   app.on('activate', () => {
@@ -99,6 +156,13 @@ ipcMain.on('pet:set-ignore-mouse-events', (_event, ignore) => {
 });
 
 ipcMain.handle('pet:get-work-area', () => screen.getPrimaryDisplay().workArea);
+
+ipcMain.handle('pet:get-scale', () => petScale);
+
+ipcMain.handle('pet:set-scale', (_event, scale) => {
+  setPetScale(scale);
+  return petScale;
+});
 
 ipcMain.on('pet:show-context-menu', (_event, point) => {
   setMousePassthrough(false);

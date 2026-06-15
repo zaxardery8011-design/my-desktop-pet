@@ -1,0 +1,1456 @@
+{
+  "frames": {
+    "walk_000.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_001.png": {
+      "frame": {
+        "x": 286,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_002.png": {
+      "frame": {
+        "x": 572,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_003.png": {
+      "frame": {
+        "x": 858,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_004.png": {
+      "frame": {
+        "x": 1144,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_005.png": {
+      "frame": {
+        "x": 1430,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_006.png": {
+      "frame": {
+        "x": 1716,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_007.png": {
+      "frame": {
+        "x": 2002,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_008.png": {
+      "frame": {
+        "x": 2288,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_009.png": {
+      "frame": {
+        "x": 2574,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_010.png": {
+      "frame": {
+        "x": 0,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_011.png": {
+      "frame": {
+        "x": 286,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_012.png": {
+      "frame": {
+        "x": 572,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_013.png": {
+      "frame": {
+        "x": 858,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_014.png": {
+      "frame": {
+        "x": 1144,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_015.png": {
+      "frame": {
+        "x": 1430,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_016.png": {
+      "frame": {
+        "x": 1716,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_017.png": {
+      "frame": {
+        "x": 2002,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_018.png": {
+      "frame": {
+        "x": 2288,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_019.png": {
+      "frame": {
+        "x": 2574,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_020.png": {
+      "frame": {
+        "x": 0,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_021.png": {
+      "frame": {
+        "x": 286,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_022.png": {
+      "frame": {
+        "x": 572,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_023.png": {
+      "frame": {
+        "x": 858,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_024.png": {
+      "frame": {
+        "x": 1144,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_025.png": {
+      "frame": {
+        "x": 1430,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_026.png": {
+      "frame": {
+        "x": 1716,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_027.png": {
+      "frame": {
+        "x": 2002,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_028.png": {
+      "frame": {
+        "x": 2288,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_029.png": {
+      "frame": {
+        "x": 2574,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_030.png": {
+      "frame": {
+        "x": 0,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_031.png": {
+      "frame": {
+        "x": 286,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_032.png": {
+      "frame": {
+        "x": 572,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_033.png": {
+      "frame": {
+        "x": 858,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_034.png": {
+      "frame": {
+        "x": 1144,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_035.png": {
+      "frame": {
+        "x": 1430,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_036.png": {
+      "frame": {
+        "x": 1716,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_037.png": {
+      "frame": {
+        "x": 2002,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_038.png": {
+      "frame": {
+        "x": 2288,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_039.png": {
+      "frame": {
+        "x": 2574,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_040.png": {
+      "frame": {
+        "x": 0,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_041.png": {
+      "frame": {
+        "x": 286,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_042.png": {
+      "frame": {
+        "x": 572,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_043.png": {
+      "frame": {
+        "x": 858,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_044.png": {
+      "frame": {
+        "x": 1144,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_045.png": {
+      "frame": {
+        "x": 1430,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_046.png": {
+      "frame": {
+        "x": 1716,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_047.png": {
+      "frame": {
+        "x": 2002,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_048.png": {
+      "frame": {
+        "x": 2288,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_049.png": {
+      "frame": {
+        "x": 2574,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_050.png": {
+      "frame": {
+        "x": 0,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_051.png": {
+      "frame": {
+        "x": 286,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_052.png": {
+      "frame": {
+        "x": 572,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_053.png": {
+      "frame": {
+        "x": 858,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_054.png": {
+      "frame": {
+        "x": 1144,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_055.png": {
+      "frame": {
+        "x": 1430,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_056.png": {
+      "frame": {
+        "x": 1716,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_057.png": {
+      "frame": {
+        "x": 2002,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_058.png": {
+      "frame": {
+        "x": 2288,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_059.png": {
+      "frame": {
+        "x": 2574,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_060.png": {
+      "frame": {
+        "x": 0,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_061.png": {
+      "frame": {
+        "x": 286,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_062.png": {
+      "frame": {
+        "x": 572,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_063.png": {
+      "frame": {
+        "x": 858,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_064.png": {
+      "frame": {
+        "x": 1144,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_065.png": {
+      "frame": {
+        "x": 1430,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_066.png": {
+      "frame": {
+        "x": 1716,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_067.png": {
+      "frame": {
+        "x": 2002,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_068.png": {
+      "frame": {
+        "x": 2288,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_069.png": {
+      "frame": {
+        "x": 2574,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_070.png": {
+      "frame": {
+        "x": 0,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_071.png": {
+      "frame": {
+        "x": 286,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_072.png": {
+      "frame": {
+        "x": 572,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_073.png": {
+      "frame": {
+        "x": 858,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_074.png": {
+      "frame": {
+        "x": 1144,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_075.png": {
+      "frame": {
+        "x": 1430,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_076.png": {
+      "frame": {
+        "x": 1716,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_077.png": {
+      "frame": {
+        "x": 2002,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_078.png": {
+      "frame": {
+        "x": 2288,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_079.png": {
+      "frame": {
+        "x": 2574,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_080.png": {
+      "frame": {
+        "x": 0,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_081.png": {
+      "frame": {
+        "x": 286,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_082.png": {
+      "frame": {
+        "x": 572,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_083.png": {
+      "frame": {
+        "x": 858,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_084.png": {
+      "frame": {
+        "x": 1144,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_085.png": {
+      "frame": {
+        "x": 1430,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_086.png": {
+      "frame": {
+        "x": 1716,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_087.png": {
+      "frame": {
+        "x": 2002,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_088.png": {
+      "frame": {
+        "x": 2288,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_089.png": {
+      "frame": {
+        "x": 2574,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_090.png": {
+      "frame": {
+        "x": 0,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_091.png": {
+      "frame": {
+        "x": 286,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_092.png": {
+      "frame": {
+        "x": 572,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_093.png": {
+      "frame": {
+        "x": 858,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_094.png": {
+      "frame": {
+        "x": 1144,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "walk_095.png": {
+      "frame": {
+        "x": 1430,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    }
+  },
+  "meta": {
+    "image": "walk.png",
+    "size": {
+      "w": 2860,
+      "h": 4800
+    },
+    "frameCount": 96,
+    "frameSize": {
+      "w": 286,
+      "h": 480
+    }
+  }
+}

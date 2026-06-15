@@ -1,0 +1,1456 @@
+{
+  "frames": {
+    "scratch_000.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_001.png": {
+      "frame": {
+        "x": 286,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_002.png": {
+      "frame": {
+        "x": 572,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_003.png": {
+      "frame": {
+        "x": 858,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_004.png": {
+      "frame": {
+        "x": 1144,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_005.png": {
+      "frame": {
+        "x": 1430,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_006.png": {
+      "frame": {
+        "x": 1716,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_007.png": {
+      "frame": {
+        "x": 2002,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_008.png": {
+      "frame": {
+        "x": 2288,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_009.png": {
+      "frame": {
+        "x": 2574,
+        "y": 0,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_010.png": {
+      "frame": {
+        "x": 0,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_011.png": {
+      "frame": {
+        "x": 286,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_012.png": {
+      "frame": {
+        "x": 572,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_013.png": {
+      "frame": {
+        "x": 858,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_014.png": {
+      "frame": {
+        "x": 1144,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_015.png": {
+      "frame": {
+        "x": 1430,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_016.png": {
+      "frame": {
+        "x": 1716,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_017.png": {
+      "frame": {
+        "x": 2002,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_018.png": {
+      "frame": {
+        "x": 2288,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_019.png": {
+      "frame": {
+        "x": 2574,
+        "y": 480,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_020.png": {
+      "frame": {
+        "x": 0,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_021.png": {
+      "frame": {
+        "x": 286,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_022.png": {
+      "frame": {
+        "x": 572,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_023.png": {
+      "frame": {
+        "x": 858,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_024.png": {
+      "frame": {
+        "x": 1144,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_025.png": {
+      "frame": {
+        "x": 1430,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_026.png": {
+      "frame": {
+        "x": 1716,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_027.png": {
+      "frame": {
+        "x": 2002,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_028.png": {
+      "frame": {
+        "x": 2288,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_029.png": {
+      "frame": {
+        "x": 2574,
+        "y": 960,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_030.png": {
+      "frame": {
+        "x": 0,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_031.png": {
+      "frame": {
+        "x": 286,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_032.png": {
+      "frame": {
+        "x": 572,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_033.png": {
+      "frame": {
+        "x": 858,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_034.png": {
+      "frame": {
+        "x": 1144,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_035.png": {
+      "frame": {
+        "x": 1430,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_036.png": {
+      "frame": {
+        "x": 1716,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_037.png": {
+      "frame": {
+        "x": 2002,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_038.png": {
+      "frame": {
+        "x": 2288,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_039.png": {
+      "frame": {
+        "x": 2574,
+        "y": 1440,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_040.png": {
+      "frame": {
+        "x": 0,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_041.png": {
+      "frame": {
+        "x": 286,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_042.png": {
+      "frame": {
+        "x": 572,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_043.png": {
+      "frame": {
+        "x": 858,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_044.png": {
+      "frame": {
+        "x": 1144,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_045.png": {
+      "frame": {
+        "x": 1430,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_046.png": {
+      "frame": {
+        "x": 1716,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_047.png": {
+      "frame": {
+        "x": 2002,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_048.png": {
+      "frame": {
+        "x": 2288,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_049.png": {
+      "frame": {
+        "x": 2574,
+        "y": 1920,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_050.png": {
+      "frame": {
+        "x": 0,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_051.png": {
+      "frame": {
+        "x": 286,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_052.png": {
+      "frame": {
+        "x": 572,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_053.png": {
+      "frame": {
+        "x": 858,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_054.png": {
+      "frame": {
+        "x": 1144,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_055.png": {
+      "frame": {
+        "x": 1430,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_056.png": {
+      "frame": {
+        "x": 1716,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_057.png": {
+      "frame": {
+        "x": 2002,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_058.png": {
+      "frame": {
+        "x": 2288,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_059.png": {
+      "frame": {
+        "x": 2574,
+        "y": 2400,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_060.png": {
+      "frame": {
+        "x": 0,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_061.png": {
+      "frame": {
+        "x": 286,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_062.png": {
+      "frame": {
+        "x": 572,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_063.png": {
+      "frame": {
+        "x": 858,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_064.png": {
+      "frame": {
+        "x": 1144,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_065.png": {
+      "frame": {
+        "x": 1430,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_066.png": {
+      "frame": {
+        "x": 1716,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_067.png": {
+      "frame": {
+        "x": 2002,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_068.png": {
+      "frame": {
+        "x": 2288,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_069.png": {
+      "frame": {
+        "x": 2574,
+        "y": 2880,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_070.png": {
+      "frame": {
+        "x": 0,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_071.png": {
+      "frame": {
+        "x": 286,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_072.png": {
+      "frame": {
+        "x": 572,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_073.png": {
+      "frame": {
+        "x": 858,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_074.png": {
+      "frame": {
+        "x": 1144,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_075.png": {
+      "frame": {
+        "x": 1430,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_076.png": {
+      "frame": {
+        "x": 1716,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_077.png": {
+      "frame": {
+        "x": 2002,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_078.png": {
+      "frame": {
+        "x": 2288,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_079.png": {
+      "frame": {
+        "x": 2574,
+        "y": 3360,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_080.png": {
+      "frame": {
+        "x": 0,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_081.png": {
+      "frame": {
+        "x": 286,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_082.png": {
+      "frame": {
+        "x": 572,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_083.png": {
+      "frame": {
+        "x": 858,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_084.png": {
+      "frame": {
+        "x": 1144,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_085.png": {
+      "frame": {
+        "x": 1430,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_086.png": {
+      "frame": {
+        "x": 1716,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_087.png": {
+      "frame": {
+        "x": 2002,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_088.png": {
+      "frame": {
+        "x": 2288,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_089.png": {
+      "frame": {
+        "x": 2574,
+        "y": 3840,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_090.png": {
+      "frame": {
+        "x": 0,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_091.png": {
+      "frame": {
+        "x": 286,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_092.png": {
+      "frame": {
+        "x": 572,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_093.png": {
+      "frame": {
+        "x": 858,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_094.png": {
+      "frame": {
+        "x": 1144,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "scratch_095.png": {
+      "frame": {
+        "x": 1430,
+        "y": 4320,
+        "w": 286,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 286,
+        "h": 480
+      },
+      "durationMs": null
+    }
+  },
+  "meta": {
+    "image": "scratch.png",
+    "size": {
+      "w": 2860,
+      "h": 4800
+    },
+    "frameCount": 96,
+    "frameSize": {
+      "w": 286,
+      "h": 480
+    }
+  }
+}

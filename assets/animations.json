@@ -1,16 +1,14 @@
 {
   "fps": 12,
-  "runtimeFrameSize": {
-    "w": 270,
-    "h": 480
-  },
-  "sourceManifest": "C:\\Users\\User\\Desktop\\AIWORK\\pet_factory\\outputs\\mrwu\\electron_assets\\assets\\animations.json",
   "actions": {
     "alert": {
       "framesDir": "assets/actions/alert",
       "framePattern": "alert_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/alert.png",
+      "spriteJson": "assets/sprites/alert.json",
+      "apng": "assets/apng/alert.png",
       "frameSize": {
         "w": 270,
         "h": 480
@@ -25,6 +23,9 @@
       "framePattern": "applaud_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/applaud.png",
+      "spriteJson": "assets/sprites/applaud.json",
+      "apng": "assets/apng/applaud.png",
       "frameSize": {
         "w": 270,
         "h": 480
@@ -39,6 +40,9 @@
       "framePattern": "cheer_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/cheer.png",
+      "spriteJson": "assets/sprites/cheer.json",
+      "apng": "assets/apng/cheer.png",
       "frameSize": {
         "w": 270,
         "h": 480
@@ -53,12 +57,15 @@
       "framePattern": "dig_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/dig.png",
+      "spriteJson": "assets/sprites/dig.json",
+      "apng": "assets/apng/dig.png",
       "frameSize": {
-        "w": 270,
+        "w": 286,
         "h": 480
       },
       "sourceFrameSize": {
-        "w": 720,
+        "w": 736,
         "h": 1280
       }
     },
@@ -67,6 +74,9 @@
       "framePattern": "drink_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/drink.png",
+      "spriteJson": "assets/sprites/drink.json",
+      "apng": "assets/apng/drink.png",
       "frameSize": {
         "w": 270,
         "h": 480
@@ -81,6 +91,9 @@
       "framePattern": "eat_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/eat.png",
+      "spriteJson": "assets/sprites/eat.json",
+      "apng": "assets/apng/eat.png",
       "frameSize": {
         "w": 270,
         "h": 480
@@ -95,12 +108,15 @@
       "framePattern": "scratch_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/scratch.png",
+      "spriteJson": "assets/sprites/scratch.json",
+      "apng": "assets/apng/scratch.png",
       "frameSize": {
-        "w": 270,
+        "w": 286,
         "h": 480
       },
       "sourceFrameSize": {
-        "w": 720,
+        "w": 736,
         "h": 1280
       }
     },
@@ -109,6 +125,9 @@
       "framePattern": "sign_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/sign.png",
+      "spriteJson": "assets/sprites/sign.json",
+      "apng": "assets/apng/sign.png",
       "frameSize": {
         "w": 270,
         "h": 480
@@ -123,6 +142,9 @@
       "framePattern": "sleep_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/sleep.png",
+      "spriteJson": "assets/sprites/sleep.json",
+      "apng": "assets/apng/sleep.png",
       "frameSize": {
         "w": 270,
         "h": 480
@@ -137,6 +159,9 @@
       "framePattern": "sniff_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/sniff.png",
+      "spriteJson": "assets/sprites/sniff.json",
+      "apng": "assets/apng/sniff.png",
       "frameSize": {
         "w": 270,
         "h": 480
@@ -151,12 +176,15 @@
       "framePattern": "walk_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/walk.png",
+      "spriteJson": "assets/sprites/walk.json",
+      "apng": "assets/apng/walk.png",
       "frameSize": {
-        "w": 270,
+        "w": 286,
         "h": 480
       },
       "sourceFrameSize": {
-        "w": 720,
+        "w": 736,
         "h": 1280
       }
     },
@@ -165,6 +193,9 @@
       "framePattern": "yawn_%03d.png",
       "frameCount": 96,
       "fps": 12,
+      "sprite": "assets/sprites/yawn.png",
+      "spriteJson": "assets/sprites/yawn.json",
+      "apng": "assets/apng/yawn.png",
       "frameSize": {
         "w": 270,
         "h": 480
@@ -174,5 +205,6 @@
         "h": 1280
       }
     }
-  }
+  },
+  "runtimeFrameHeight": 480
 }

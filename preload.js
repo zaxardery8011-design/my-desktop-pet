@@ -10,6 +10,17 @@ contextBridge.exposeInMainWorld('mrwuPet', {
   getWorkArea() {
     return ipcRenderer.invoke('pet:get-work-area');
   },
+  getScale() {
+    return ipcRenderer.invoke('pet:get-scale');
+  },
+  setScale(scale) {
+    return ipcRenderer.invoke('pet:set-scale', scale);
+  },
+  onScaleChanged(callback) {
+    const listener = (_event, scale) => callback(scale);
+    ipcRenderer.on('pet:scale-changed', listener);
+    return () => ipcRenderer.removeListener('pet:scale-changed', listener);
+  },
   exit() {
     ipcRenderer.send('pet:exit');
   }

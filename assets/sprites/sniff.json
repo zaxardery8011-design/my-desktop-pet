@@ -1,0 +1,1456 @@
+{
+  "frames": {
+    "sniff_000.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_001.png": {
+      "frame": {
+        "x": 270,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_002.png": {
+      "frame": {
+        "x": 540,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_003.png": {
+      "frame": {
+        "x": 810,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_004.png": {
+      "frame": {
+        "x": 1080,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_005.png": {
+      "frame": {
+        "x": 1350,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_006.png": {
+      "frame": {
+        "x": 1620,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_007.png": {
+      "frame": {
+        "x": 1890,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_008.png": {
+      "frame": {
+        "x": 2160,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_009.png": {
+      "frame": {
+        "x": 2430,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_010.png": {
+      "frame": {
+        "x": 0,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_011.png": {
+      "frame": {
+        "x": 270,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_012.png": {
+      "frame": {
+        "x": 540,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_013.png": {
+      "frame": {
+        "x": 810,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_014.png": {
+      "frame": {
+        "x": 1080,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_015.png": {
+      "frame": {
+        "x": 1350,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_016.png": {
+      "frame": {
+        "x": 1620,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_017.png": {
+      "frame": {
+        "x": 1890,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_018.png": {
+      "frame": {
+        "x": 2160,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_019.png": {
+      "frame": {
+        "x": 2430,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_020.png": {
+      "frame": {
+        "x": 0,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_021.png": {
+      "frame": {
+        "x": 270,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_022.png": {
+      "frame": {
+        "x": 540,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_023.png": {
+      "frame": {
+        "x": 810,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_024.png": {
+      "frame": {
+        "x": 1080,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_025.png": {
+      "frame": {
+        "x": 1350,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_026.png": {
+      "frame": {
+        "x": 1620,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_027.png": {
+      "frame": {
+        "x": 1890,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_028.png": {
+      "frame": {
+        "x": 2160,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_029.png": {
+      "frame": {
+        "x": 2430,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_030.png": {
+      "frame": {
+        "x": 0,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_031.png": {
+      "frame": {
+        "x": 270,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_032.png": {
+      "frame": {
+        "x": 540,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_033.png": {
+      "frame": {
+        "x": 810,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_034.png": {
+      "frame": {
+        "x": 1080,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_035.png": {
+      "frame": {
+        "x": 1350,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_036.png": {
+      "frame": {
+        "x": 1620,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_037.png": {
+      "frame": {
+        "x": 1890,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_038.png": {
+      "frame": {
+        "x": 2160,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_039.png": {
+      "frame": {
+        "x": 2430,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_040.png": {
+      "frame": {
+        "x": 0,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_041.png": {
+      "frame": {
+        "x": 270,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_042.png": {
+      "frame": {
+        "x": 540,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_043.png": {
+      "frame": {
+        "x": 810,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_044.png": {
+      "frame": {
+        "x": 1080,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_045.png": {
+      "frame": {
+        "x": 1350,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_046.png": {
+      "frame": {
+        "x": 1620,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_047.png": {
+      "frame": {
+        "x": 1890,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_048.png": {
+      "frame": {
+        "x": 2160,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_049.png": {
+      "frame": {
+        "x": 2430,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_050.png": {
+      "frame": {
+        "x": 0,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_051.png": {
+      "frame": {
+        "x": 270,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_052.png": {
+      "frame": {
+        "x": 540,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_053.png": {
+      "frame": {
+        "x": 810,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_054.png": {
+      "frame": {
+        "x": 1080,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_055.png": {
+      "frame": {
+        "x": 1350,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_056.png": {
+      "frame": {
+        "x": 1620,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_057.png": {
+      "frame": {
+        "x": 1890,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_058.png": {
+      "frame": {
+        "x": 2160,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_059.png": {
+      "frame": {
+        "x": 2430,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_060.png": {
+      "frame": {
+        "x": 0,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_061.png": {
+      "frame": {
+        "x": 270,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_062.png": {
+      "frame": {
+        "x": 540,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_063.png": {
+      "frame": {
+        "x": 810,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_064.png": {
+      "frame": {
+        "x": 1080,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_065.png": {
+      "frame": {
+        "x": 1350,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_066.png": {
+      "frame": {
+        "x": 1620,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_067.png": {
+      "frame": {
+        "x": 1890,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_068.png": {
+      "frame": {
+        "x": 2160,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_069.png": {
+      "frame": {
+        "x": 2430,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_070.png": {
+      "frame": {
+        "x": 0,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_071.png": {
+      "frame": {
+        "x": 270,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_072.png": {
+      "frame": {
+        "x": 540,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_073.png": {
+      "frame": {
+        "x": 810,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_074.png": {
+      "frame": {
+        "x": 1080,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_075.png": {
+      "frame": {
+        "x": 1350,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_076.png": {
+      "frame": {
+        "x": 1620,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_077.png": {
+      "frame": {
+        "x": 1890,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_078.png": {
+      "frame": {
+        "x": 2160,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_079.png": {
+      "frame": {
+        "x": 2430,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_080.png": {
+      "frame": {
+        "x": 0,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_081.png": {
+      "frame": {
+        "x": 270,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_082.png": {
+      "frame": {
+        "x": 540,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_083.png": {
+      "frame": {
+        "x": 810,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_084.png": {
+      "frame": {
+        "x": 1080,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_085.png": {
+      "frame": {
+        "x": 1350,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_086.png": {
+      "frame": {
+        "x": 1620,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_087.png": {
+      "frame": {
+        "x": 1890,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_088.png": {
+      "frame": {
+        "x": 2160,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_089.png": {
+      "frame": {
+        "x": 2430,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_090.png": {
+      "frame": {
+        "x": 0,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_091.png": {
+      "frame": {
+        "x": 270,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_092.png": {
+      "frame": {
+        "x": 540,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_093.png": {
+      "frame": {
+        "x": 810,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_094.png": {
+      "frame": {
+        "x": 1080,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "sniff_095.png": {
+      "frame": {
+        "x": 1350,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    }
+  },
+  "meta": {
+    "image": "sniff.png",
+    "size": {
+      "w": 2700,
+      "h": 4800
+    },
+    "frameCount": 96,
+    "frameSize": {
+      "w": 270,
+      "h": 480
+    }
+  }
+}

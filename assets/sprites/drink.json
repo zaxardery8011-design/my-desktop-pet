@@ -1,0 +1,1456 @@
+{
+  "frames": {
+    "drink_000.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_001.png": {
+      "frame": {
+        "x": 270,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_002.png": {
+      "frame": {
+        "x": 540,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_003.png": {
+      "frame": {
+        "x": 810,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_004.png": {
+      "frame": {
+        "x": 1080,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_005.png": {
+      "frame": {
+        "x": 1350,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_006.png": {
+      "frame": {
+        "x": 1620,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_007.png": {
+      "frame": {
+        "x": 1890,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_008.png": {
+      "frame": {
+        "x": 2160,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_009.png": {
+      "frame": {
+        "x": 2430,
+        "y": 0,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_010.png": {
+      "frame": {
+        "x": 0,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_011.png": {
+      "frame": {
+        "x": 270,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_012.png": {
+      "frame": {
+        "x": 540,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_013.png": {
+      "frame": {
+        "x": 810,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_014.png": {
+      "frame": {
+        "x": 1080,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_015.png": {
+      "frame": {
+        "x": 1350,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_016.png": {
+      "frame": {
+        "x": 1620,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_017.png": {
+      "frame": {
+        "x": 1890,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_018.png": {
+      "frame": {
+        "x": 2160,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_019.png": {
+      "frame": {
+        "x": 2430,
+        "y": 480,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_020.png": {
+      "frame": {
+        "x": 0,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_021.png": {
+      "frame": {
+        "x": 270,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_022.png": {
+      "frame": {
+        "x": 540,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_023.png": {
+      "frame": {
+        "x": 810,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_024.png": {
+      "frame": {
+        "x": 1080,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_025.png": {
+      "frame": {
+        "x": 1350,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_026.png": {
+      "frame": {
+        "x": 1620,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_027.png": {
+      "frame": {
+        "x": 1890,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_028.png": {
+      "frame": {
+        "x": 2160,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_029.png": {
+      "frame": {
+        "x": 2430,
+        "y": 960,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_030.png": {
+      "frame": {
+        "x": 0,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_031.png": {
+      "frame": {
+        "x": 270,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_032.png": {
+      "frame": {
+        "x": 540,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_033.png": {
+      "frame": {
+        "x": 810,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_034.png": {
+      "frame": {
+        "x": 1080,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_035.png": {
+      "frame": {
+        "x": 1350,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_036.png": {
+      "frame": {
+        "x": 1620,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_037.png": {
+      "frame": {
+        "x": 1890,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_038.png": {
+      "frame": {
+        "x": 2160,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_039.png": {
+      "frame": {
+        "x": 2430,
+        "y": 1440,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_040.png": {
+      "frame": {
+        "x": 0,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_041.png": {
+      "frame": {
+        "x": 270,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_042.png": {
+      "frame": {
+        "x": 540,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_043.png": {
+      "frame": {
+        "x": 810,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_044.png": {
+      "frame": {
+        "x": 1080,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_045.png": {
+      "frame": {
+        "x": 1350,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_046.png": {
+      "frame": {
+        "x": 1620,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_047.png": {
+      "frame": {
+        "x": 1890,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_048.png": {
+      "frame": {
+        "x": 2160,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_049.png": {
+      "frame": {
+        "x": 2430,
+        "y": 1920,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_050.png": {
+      "frame": {
+        "x": 0,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_051.png": {
+      "frame": {
+        "x": 270,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_052.png": {
+      "frame": {
+        "x": 540,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_053.png": {
+      "frame": {
+        "x": 810,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_054.png": {
+      "frame": {
+        "x": 1080,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_055.png": {
+      "frame": {
+        "x": 1350,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_056.png": {
+      "frame": {
+        "x": 1620,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_057.png": {
+      "frame": {
+        "x": 1890,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_058.png": {
+      "frame": {
+        "x": 2160,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_059.png": {
+      "frame": {
+        "x": 2430,
+        "y": 2400,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_060.png": {
+      "frame": {
+        "x": 0,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_061.png": {
+      "frame": {
+        "x": 270,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_062.png": {
+      "frame": {
+        "x": 540,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_063.png": {
+      "frame": {
+        "x": 810,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_064.png": {
+      "frame": {
+        "x": 1080,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_065.png": {
+      "frame": {
+        "x": 1350,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_066.png": {
+      "frame": {
+        "x": 1620,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_067.png": {
+      "frame": {
+        "x": 1890,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_068.png": {
+      "frame": {
+        "x": 2160,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_069.png": {
+      "frame": {
+        "x": 2430,
+        "y": 2880,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_070.png": {
+      "frame": {
+        "x": 0,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_071.png": {
+      "frame": {
+        "x": 270,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_072.png": {
+      "frame": {
+        "x": 540,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_073.png": {
+      "frame": {
+        "x": 810,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_074.png": {
+      "frame": {
+        "x": 1080,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_075.png": {
+      "frame": {
+        "x": 1350,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_076.png": {
+      "frame": {
+        "x": 1620,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_077.png": {
+      "frame": {
+        "x": 1890,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_078.png": {
+      "frame": {
+        "x": 2160,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_079.png": {
+      "frame": {
+        "x": 2430,
+        "y": 3360,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_080.png": {
+      "frame": {
+        "x": 0,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_081.png": {
+      "frame": {
+        "x": 270,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_082.png": {
+      "frame": {
+        "x": 540,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_083.png": {
+      "frame": {
+        "x": 810,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_084.png": {
+      "frame": {
+        "x": 1080,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_085.png": {
+      "frame": {
+        "x": 1350,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_086.png": {
+      "frame": {
+        "x": 1620,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_087.png": {
+      "frame": {
+        "x": 1890,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_088.png": {
+      "frame": {
+        "x": 2160,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_089.png": {
+      "frame": {
+        "x": 2430,
+        "y": 3840,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_090.png": {
+      "frame": {
+        "x": 0,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_091.png": {
+      "frame": {
+        "x": 270,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_092.png": {
+      "frame": {
+        "x": 540,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_093.png": {
+      "frame": {
+        "x": 810,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_094.png": {
+      "frame": {
+        "x": 1080,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    },
+    "drink_095.png": {
+      "frame": {
+        "x": 1350,
+        "y": 4320,
+        "w": 270,
+        "h": 480
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 270,
+        "h": 480
+      },
+      "durationMs": null
+    }
+  },
+  "meta": {
+    "image": "drink.png",
+    "size": {
+      "w": 2700,
+      "h": 4800
+    },
+    "frameCount": 96,
+    "frameSize": {
+      "w": 270,
+      "h": 480
+    }
+  }
+}
