@@ -6,9 +6,58 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder --win nsis --x64"
   },
   "devDependencies": {
-    "electron": "^42.4.0"
+    "electron": "^42.4.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.mrwu.desktoppet",
+    "productName": "Mr.Wu 桌寵",
+    "directories": {
+      "output": "dist"
+    },
+    "electronLanguages": [
+      "zh-TW",
+      "en-US"
+    ],
+    "files": [
+      "main.js",
+      "preload.js",
+      "pet.html",
+      "pet.css",
+      "pet.js",
+      "package.json",
+      "assets/animations.json",
+      "assets/frames/**/*",
+      "assets/cool/**/*",
+      "assets/sprites/**/*",
+      "!assets/actions/**/*",
+      "!assets/apng/**/*",
+      "!assets/wave_probe/**/*",
+      "!assets/make_frames.py",
+      "!assets/*.jpg"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Mr.Wu 桌寵"
+    }
   }
 }

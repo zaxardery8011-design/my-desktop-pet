@@ -12,11 +12,19 @@ npm start
 
 啟動後會開一個透明、置頂、跳過工作列的 frameless overlay。預設不攔截桌面操作；滑鼠移到 Mr.Wu 實體透明 PNG 像素上才會暫時接管滑鼠，讓你可以點擊、拖曳或右鍵叫出選單。
 
+## 打包 Windows 安裝檔
+
+```powershell
+npm run build
+```
+
+安裝檔會輸出到 `dist/`。runtime 動作素材使用 `assets/sprites/*.png` 與同名 atlas JSON；`assets/actions/` 是本機逐幀來源素材，不需要進 installer，也不再追蹤進 Git。
+
 ## 目前範圍
 
 - Electron 透明置頂桌寵視窗。
 - 使用 `assets/mrwu.png` 透明 cutout 顯示 Mr.Wu。
-- 使用 `assets/actions/<action>/*.png` 逐幀播放 walk/scratch/eat/sleep/sniff/alert/dig/yawn/cheer/sign/applaud/drink。
+- 使用 `assets/sprites/<action>.png` 搭配 atlas JSON 播放 walk/scratch/eat/sleep/sniff/alert/dig/yawn/cheer/sign/applaud/drink。
 - 沿主螢幕 workArea 底部水平來回走動。
 - 隨機走路、停頓、換方向。
 - 到邊界自動左右翻面。

@@ -89,6 +89,9 @@
   const frameSources = { ...baseFrameSources, ...coolFrameSources };
   const frameKeys = ['idle', 'walk1', 'walk2', 'walk3', 'sit', ...coolFrameKeys];
   const frames = {};
+  const spriteFrameSources = {};
+  const spriteImagePromises = {};
+  const spriteAtlasPromises = {};
   const generatedActions = {};
 
   const stateDurations = {
@@ -436,6 +439,27 @@
     return pattern;
   }
 
+  function registerGeneratedActionFrame(actionName, entry, framePattern, index) {
+    const frameName = frameFileFromPattern(framePattern, index);
+    const key = `action_${actionName}_${String(index).padStart(3, '0')}`;
+
+    if (entry.sprite && entry.spriteJson) {
+      spriteFrameSources[key] = {
+        sprite: entry.sprite,
+        spriteJson: entry.spriteJson,
+        frameName
+      };
+      return key;
+    }
+
+    if (entry.framesDir) {
+      frameSources[key] = `${entry.framesDir}/${frameName}`;
+      return key;
+    }
+
+    return null;
+  }
+
   function registerGeneratedActionManifest(manifest) {
     const actions = manifest && manifest.actions ? manifest.actions : {};
 
@@ -446,8 +470,10 @@
       const framesForAction = [];
 
       for (let index = 0; index < frameCount; index += 1) {
-        const key = `action_${actionName}_${String(index).padStart(3, '0')}`;
-        frameSources[key] = `${entry.framesDir}/${frameFileFromPattern(framePattern, index)}`;
+        const key = registerGeneratedActionFrame(actionName, entry, framePattern, index);
+        if (!key) {
+          continue;
+        }
         frameKeys.push(key);
         framesForAction.push(key);
       }
@@ -1365,26 +1391,105 @@
     api.showContextMenu({ x: event.clientX, y: event.clientY });
   }
 
-  function loadFrame(key) {
+  function loadImage(src) {
     return new Promise((resolve, reject) => {
       const image = new Image();
-      const src = frameSources[key];
 
       image.onload = () => {
-        resolve({
-          key,
-          src,
-          image,
-          naturalWidth: image.naturalWidth,
-          naturalHeight: image.naturalHeight
-        });
+        resolve(image);
       };
       image.onerror = () => {
-        reject(new Error(`Failed to load pet frame: ${src}`));
+        reject(new Error(`Failed to load pet image: ${src}`));
       };
       image.decoding = 'async';
       image.src = src;
     });
+  }
+
+  function loadSpriteImage(src) {
+    if (!spriteImagePromises[src]) {
+      spriteImagePromises[src] = loadImage(src);
+    }
+    return spriteImagePromises[src];
+  }
+
+  function loadSpriteAtlas(src) {
+    if (!spriteAtlasPromises[src]) {
+      spriteAtlasPromises[src] = fetch(src, { cache: 'no-store' }).then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to load sprite atlas ${src}: HTTP ${response.status}`);
+        }
+        return response.json();
+      });
+    }
+    return spriteAtlasPromises[src];
+  }
+
+  async function loadSpriteFrame(key) {
+    const source = spriteFrameSources[key];
+    const [spriteImage, atlas] = await Promise.all([
+      loadSpriteImage(source.sprite),
+      loadSpriteAtlas(source.spriteJson)
+    ]);
+    const frameMeta = atlas && atlas.frames ? atlas.frames[source.frameName] : null;
+
+    if (!frameMeta || !frameMeta.frame) {
+      throw new Error(`Missing sprite frame ${source.frameName} in ${source.spriteJson}`);
+    }
+    if (frameMeta.rotated) {
+      throw new Error(`Rotated sprite frames are not supported: ${source.frameName}`);
+    }
+
+    const rect = frameMeta.frame;
+    const sourceSize = frameMeta.sourceSize || { w: rect.w, h: rect.h };
+    const spriteSourceSize = frameMeta.spriteSourceSize || {
+      x: 0,
+      y: 0,
+      w: rect.w,
+      h: rect.h
+    };
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = sourceSize.w;
+    canvas.height = sourceSize.h;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      spriteImage,
+      rect.x,
+      rect.y,
+      rect.w,
+      rect.h,
+      spriteSourceSize.x || 0,
+      spriteSourceSize.y || 0,
+      spriteSourceSize.w || rect.w,
+      spriteSourceSize.h || rect.h
+    );
+
+    return {
+      key,
+      src: canvas.toDataURL('image/png'),
+      image: canvas,
+      naturalWidth: canvas.width,
+      naturalHeight: canvas.height
+    };
+  }
+
+  async function loadFrame(key) {
+    if (spriteFrameSources[key]) {
+      return loadSpriteFrame(key);
+    }
+
+    const src = frameSources[key];
+    const image = await loadImage(src);
+
+    return {
+      key,
+      src,
+      image,
+      naturalWidth: image.naturalWidth,
+      naturalHeight: image.naturalHeight
+    };
   }
 
   async function loadFrames() {
